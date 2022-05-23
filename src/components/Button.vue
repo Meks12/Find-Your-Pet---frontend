@@ -1,5 +1,5 @@
 <template>
-  <button>Prijavi Izgubljenog Ljubimca</button>
+  <button @click="goToPrijavaNestanka">Prijavi Izgubljenog Ljubimca</button>
 </template>
 
 <script>
@@ -10,6 +10,11 @@ export default {
   },
   beforeDestroy() {
     document.querySelector("body").setAttribute("style", "");
+  },
+  methods: {
+    goToPrijavaNestanka() {
+      this.$router.push("/prijavanestanka");
+    },
   },
 };
 </script>
@@ -22,5 +27,6 @@ button {
   margin-top: 50px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
+  cursor: pointer;
 }
 </style>

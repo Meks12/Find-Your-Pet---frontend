@@ -6,16 +6,28 @@
   <div>
     <Button />
   </div>
+
+  <div>
+    <ButtonPronadi />
+  </div>
 </template>
 
 <script>
 import HelloWorld from "@/components/HelloWorld.vue";
 import Button from "../components/Button.vue";
+import ButtonPronadi from "../components/ButtonPronadi.vue";
 
 export default {
   name: "HomeView",
   components: {
     Button,
+    ButtonPronadi,
+    methods: {
+      goToPrijavaNestanka() {
+        this.$router.push("/prijavanestanka");
+      },
+    },
+    ButtonPronadi,
   },
 };
 </script>

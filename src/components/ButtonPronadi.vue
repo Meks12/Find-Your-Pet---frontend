@@ -1,12 +1,22 @@
 <template>
-  <button>Pronađi Ljubimca</button>
+  <button @click="goToPronadiLjubimca">Pronađi Ljubimca</button>
 </template>
 
 <script>
-import Button from "./Button.vue";
 export default {
-  components: { Button },
+  methods: {
+    goToPronadiLjubimca() {
+      this.$router.push("/pronadiljubimca");
+    },
+  },
 };
 </script>
 
-<style></style>
+<style>
+.PronadiLjubimca {
+  background-color: yellow;
+  margin-top: 100px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  cursor: pointer;
+}
+</style>

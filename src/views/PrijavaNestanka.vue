@@ -15,7 +15,6 @@
     <input type="radio" id="two" value="Žensko" v-model="picked" />
     <label for="two">Žensko</label>
   </div>
-
   <p>Datum Nestanka: {{ message }}</p>
   <input v-model="message" placeholder="Upišite datum nestanka" />
 </template>
@@ -23,7 +22,6 @@
 <script>
 export default {
   name: "PrijavaNestanka",
-  components: {},
 };
 </script>
 

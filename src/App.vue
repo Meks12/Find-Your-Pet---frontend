@@ -3,6 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
     <router-link to="/PrijavaNestanka"> Prijava Nestanka</router-link>
+    <router-link to="/PronadiLjubimca">Pronadi Ljubimca</router-link>
   </nav>
   <router-view />
 </template>
