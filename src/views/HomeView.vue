@@ -5,7 +5,7 @@
     </div>
   </header>
   <div>
-    <i>
+    <i class="BackgroundImage">
       <div>
         <div id="app"></div>
         <div>
@@ -48,7 +48,7 @@ export default {
   font-family: fantasy;
 }
 
-i {
+.BackgroundImage {
   background-image: url("@/assets/petpics.jpg");
   background-size: 100%;
   width: 100%;
