@@ -4,13 +4,6 @@
 
 <script>
 export default {
-  name: "boja pozadine stranice",
-  beforeCreate() {
-    document.querySelector("body").setAttribute("style", "background:pink");
-  },
-  beforeDestroy() {
-    document.querySelector("body").setAttribute("style", "");
-  },
   methods: {
     goToPrijavaNestanka() {
       this.$router.push("/prijavanestanka");
@@ -30,3 +23,8 @@ button {
   cursor: pointer;
 }
 </style>
+
+name: "boja pozadine stranice", beforeCreate() {
+document.querySelector("body").setAttribute("style", "background:pink"); },
+beforeDestroy() { document.querySelector("body").setAttribute("style", ""); },
+metoda za mijenjanje boje kad ukljucujemo button

@@ -1,21 +1,13 @@
 <template>
-  <header>
-    <div class="GlavniNaslov">
-      <h1>Pet Finder App</h1>
+  <div class="bgcolor">
+    <div class="GlavniNaslov" />
+    <h1>Pet Finder App</h1>
+    <div>
+      <Button />
     </div>
-  </header>
-  <div>
-    <i class="BackgroundImage">
-      <div>
-        <div id="app"></div>
-        <div>
-          <Button />
-        </div>
-        <div>
-          <ButtonPronadi />
-        </div>
-      </div>
-    </i>
+    <div>
+      <ButtonPronadi />
+    </div>
   </div>
 </template>
 
@@ -34,24 +26,23 @@ export default {
         this.$router.push("/prijavanestanka");
       },
     },
+    Button,
   },
 };
 </script>
 
 <style>
-.GlavniNaslov {
-  background-color: pink;
-  padding: 20px;
-  margin-bottom: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
+html {
   font-family: fantasy;
-}
-
-.BackgroundImage {
-  background-image: url("@/assets/petpics.jpg");
-  background-size: 100%;
+  height: 200%;
   width: 100%;
-  height: 100%;
+  background-image: url("~@/assets/petpics.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
 </style>
+
+.GlavniNaslov { padding: 20px; margin-bottom: 50px; margin-left: 50px;
+margin-right: 50px; font-family: fantasy; text-align: center; }
