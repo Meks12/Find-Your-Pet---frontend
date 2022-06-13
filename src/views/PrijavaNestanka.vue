@@ -12,7 +12,7 @@
   </p>
   <input v-model="message" placeholder="Treba dodat kartu" />
   <p class="VrPsa">Upišite vrstu psa: {{ message }}</p>
-  <input class="VrstaPsa" v-model="message" placeholder="Upišite vrstu psa" />
+ <input class="VrstaPsa" v-model="message" placeholder="Upišite vrstu psa" />
   <div class="Spol">Spol: {{ picked }}</div>
   <div class="CheckedNames">
     <input type="radio" id="one" value="Muško" v-model="picked" />
