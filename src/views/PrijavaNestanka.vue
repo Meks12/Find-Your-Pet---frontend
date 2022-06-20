@@ -1,33 +1,43 @@
 <template>
-  <p class="ImeLj">Ime Ljubimca:</p>
-  <input class="TextField1" v-model="ime" placeholder="Upišite ime ljubimca" />
-  <p class="BrMob">Broj mobitela:</p>
-  <input v-model="broj_mobitela" placeholder="Upišite broj mobitela" />
+  <div class="Background">
+    <p class="ImeLj">Ime Ljubimca:</p>
+    <input
+      class="TextField1"
+      v-model="ime"
+      placeholder="Upišite ime ljubimca"
+    />
+    <p class="BrMob">Broj mobitela:</p>
+    <input v-model="broj_mobitela" placeholder="Upišite broj mobitela" />
 
-  <p class="GeoLokacija">Označite na karti mjesto gdje je zadnje viđen:</p>
-  <input v-model="geo_lokacija" placeholder="Treba dodat kartu" />
+    <p class="GeoLokacija">Označite na karti mjesto gdje je zadnje viđen:</p>
+    <input v-model="geo_lokacija" placeholder="Treba dodat kartu" />
 
-  <p class="VrPsa">Upišite vrstu psa:</p>
-  <input class="VrstaPsa" v-model="vrsta_psa" placeholder="Upišite vrstu psa" />
+    <p class="VrPsa">Upišite vrstu psa:</p>
+    <input
+      class="VrstaPsa"
+      v-model="vrsta_psa"
+      placeholder="Upišite vrstu psa"
+    />
 
-  <div class="Spol">Spol:</div>
-  <div class="CheckedNames">
-    <input type="radio" id="one" value="Muško" v-model="spol" />
-    <label for="Muško">Muško</label>
+    <div class="Spol">Spol:</div>
+    <div class="CheckedNames">
+      <input type="radio" id="one" value="Muško" v-model="spol" />
+      <label for="Muško">Muško</label>
 
-    <input type="radio" id="two" value="Žensko" v-model="spol" />
-    <label for="two">Žensko</label>
-  </div>
+      <input type="radio" id="two" value="Žensko" v-model="spol" />
+      <label for="Žensko">Žensko</label>
+    </div>
 
-  <div>
-    <p class="DatumNestanka">Datum Nestanka:</p>
-    <input v-model="datum_nestanka" placeholder="Upišite datum nestanka" />
-  </div>
+    <div>
+      <p class="DatumNestanka">Datum Nestanka:</p>
+      <input v-model="datum_nestanka" placeholder="Upišite datum nestanka" />
+    </div>
 
-  <div>
-    <button class="Spremi" v-on:click="posaljiBackend" variant="primary">
-      Spremi
-    </button>
+    <div>
+      <button class="Spremi" v-on:click="posaljiBackend" variant="primary">
+        Spremi
+      </button>
+    </div>
   </div>
 </template>
 
@@ -76,6 +86,14 @@ export default {
 </script>
 
 <style>
+.Background {
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
 .CheckedNames {
   margin-top: 20px;
 }
