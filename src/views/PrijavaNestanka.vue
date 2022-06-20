@@ -25,7 +25,9 @@
   </div>
 
   <div>
-    <button v-on:click="posaljiBackend" variant="primary">Spremi</button>
+    <button class="Spremi" v-on:click="posaljiBackend" variant="primary">
+      Spremi
+    </button>
   </div>
 </template>
 
@@ -108,5 +110,12 @@ export default {
 .DatumNestanka {
   font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
+}
+
+.Spremi {
+  margin-top: 50px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
 }
 </style>
