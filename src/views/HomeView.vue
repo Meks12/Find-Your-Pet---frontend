@@ -9,12 +9,17 @@
     <div class="ButtonPronadi">
       <ButtonPronadi />
     </div>
+
+    <div class="AdminButton">
+      <ButtonAdmin />
+    </div>
   </div>
 </template>
 
 <script>
 import Button from "../components/Button.vue";
 import ButtonPronadi from "../components/ButtonPronadi.vue";
+import ButtonAdmin from "@/components/ButtonAdmin.vue";
 
 export default {
   name: "HomeView",
@@ -27,6 +32,7 @@ export default {
       },
     },
     Button,
+    ButtonAdmin,
   },
 };
 </script>
@@ -46,5 +52,10 @@ export default {
 .GlavniNaslov {
   font-family: cursive;
   font-size: 50px;
+}
+.AdminButton {
+  margin: 50px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: large;
 }
 </style>
