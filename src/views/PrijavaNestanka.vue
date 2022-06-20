@@ -1,33 +1,50 @@
 <template>
-  <p class="ImeLj">Ime Ljubimca: {{ message }}</p>
-  <input
-    class="TextField1"
-    v-model="message"
-    placeholder="Upišite ime ljubimca"
-  />
-  <p class="BrMob">Broj mobitela: {{ message }}</p>
-  <input v-model="message" placeholder="Upišite broj mobitela" />
-  <p class="GeoLokacija">
-    Označite na karti mjesto gdje je zadnje viđen: {{ message }}
-  </p>
-  <input v-model="message" placeholder="Treba dodat kartu" />
-  <p class="VrPsa">Upišite vrstu psa: {{ message }}</p>
- <input class="VrstaPsa" v-model="message" placeholder="Upišite vrstu psa" />
-  <div class="Spol">Spol: {{ picked }}</div>
+  <p class="ImeLj">Ime Ljubimca:</p>
+  <input class="TextField1" v-model="ime" placeholder="Upišite ime ljubimca" />
+  <p class="BrMob">Broj mobitela:</p>
+  <input v-model="broj_mobitela" placeholder="Upišite broj mobitela" />
+
+  <p class="GeoLokacija">Označite na karti mjesto gdje je zadnje viđen:</p>
+  <input v-model="geo_lokacija" placeholder="Treba dodat kartu" />
+
+  <p class="VrPsa">Upišite vrstu psa:</p>
+  <input class="VrstaPsa" v-model="vrsta_psa" placeholder="Upišite vrstu psa" />
+
+  <div class="Spol">Spol:</div>
   <div class="CheckedNames">
-    <input type="radio" id="one" value="Muško" v-model="picked" />
+    <input type="radio" id="one" value="Muško" v-model="spol" />
     <label for="Muško">Muško</label>
 
-    <input type="radio" id="two" value="Žensko" v-model="picked" />
+    <input type="radio" id="two" value="Žensko" v-model="spol" />
     <label for="two">Žensko</label>
   </div>
-  <p class="DatumNestanka">Datum Nestanka: {{ message }}</p>
-  <input v-model="message" placeholder="Upišite datum nestanka" />
+
+  <p class="DatumNestanka">Datum Nestanka:</p>
+  <input v-model="datum_nestanka" placeholder="Upišite datum nestanka" />
 </template>
 
 <script>
 export default {
   name: "PrijavaNestanka",
+  data() {
+    return {
+      ime: "",
+      broj_mobitela: "",
+      geo_lokacija: "",
+      vrsta_psa: "",
+      spol: "",
+      datum_nestanka: "",
+    };
+  },
+  mounted() {
+    this.ime = localStorage.getItem("ime");
+    this.broj_mobitela = localStorage.getItem("broj_mobitela");
+    this.geo_lokacija = localStorage.getItem("geo_lokacija");
+    this.vrsta_psa = localStorage.getItem("vrsta_psa");
+    this.spol = localStorage.getItem("spol");
+    this.datum_nestanka = localStorage.datum_nestanka("datum_nestanka");
+    console.log(this.ime);
+  },
 };
 </script>
 
@@ -36,7 +53,7 @@ export default {
   margin-top: 20px;
 }
 .VrPsa {
-  font-family: monospace;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
 }
 .VrstaPsa {
@@ -44,27 +61,27 @@ export default {
 }
 
 .ImeLj {
-  font-family: monospace;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
 }
 
 .BrMob {
-  font-family: monospace;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
 }
 
 .GeoLokacija {
-  font-family: monospace;
+  font-family: "Times New Roman", Times, serif;
   font-size: 0.9cm;
 }
 
 .Spol {
-  font-family: monospace;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
 }
 
 .DatumNestanka {
-  font-family: monospace;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
 }
 </style>
