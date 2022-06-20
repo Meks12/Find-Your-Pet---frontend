@@ -19,7 +19,7 @@ export default {
 
 <style>
 .PronadiLjuNaslov {
-  font-size: x-large;
+  font-size: xx-large;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 20px;
   margin-bottom: 50px;
