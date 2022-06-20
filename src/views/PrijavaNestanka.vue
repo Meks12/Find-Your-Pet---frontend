@@ -19,8 +19,14 @@
     <label for="two">Žensko</label>
   </div>
 
-  <p class="DatumNestanka">Datum Nestanka:</p>
-  <input v-model="datum_nestanka" placeholder="Upišite datum nestanka" />
+  <div>
+    <p class="DatumNestanka">Datum Nestanka:</p>
+    <input v-model="datum_nestanka" placeholder="Upišite datum nestanka" />
+  </div>
+
+  <div>
+    <button v-on:click="posaljiBackend" variant="primary">Spremi</button>
+  </div>
 </template>
 
 <script>
@@ -42,8 +48,27 @@ export default {
     this.geo_lokacija = localStorage.getItem("geo_lokacija");
     this.vrsta_psa = localStorage.getItem("vrsta_psa");
     this.spol = localStorage.getItem("spol");
-    this.datum_nestanka = localStorage.datum_nestanka("datum_nestanka");
+    this.datum_nestanka = localStorage.getItem("datum_nestanka");
     console.log(this.ime);
+  },
+
+  methods: {
+    posaljiBackend() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://localhost:3000/prijavanestanka");
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.setRequestHeader("Content-Type", "application/json");
+      let podaci = {
+        ime: this.ime,
+        broj_mobitela: this.broj_mobitela,
+        geo_lokacija: this.geo_lokacija,
+        vrsta_psa: this.vrsta_psa,
+        spol: this.spol,
+        datum_nestanka: this.datum_nestanka,
+      };
+      console.log(podaci);
+      xhr.send(JSON.stringify(podaci));
+    },
   },
 };
 </script>
