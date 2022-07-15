@@ -18,8 +18,13 @@
       v-model="vrsta_psa"
       placeholder="Upišite vrstu psa"
     />
-
-
+    <div class = "SlikaPsa"> 
+    Izaberite sliku psa
+    <div class="input-group mb-3">
+  <input type="file" class="form-control" id="inputGroupFile02">
+  <label class="input-group-text" for="inputGroupFile02">Upload</label>
+</div>
+    </div>
 
   <div class="Ogrlica">Ogrlica:</div>
     <div class="OgrlicaDa">
@@ -134,6 +139,16 @@ export default {
 .ImeLj {
   font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
+}
+
+.SlikaPsa {
+  padding: 15px;
+  width: 15cm;
+  margin: 0 auto;
+  float: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1cm;
+  
 }
 
 .StanjeLj {
