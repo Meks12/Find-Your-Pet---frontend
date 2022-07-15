@@ -6,8 +6,8 @@
       v-model="ime"
       placeholder="Upišite ime ljubimca"
     />
-    <p class="BrMob">Broj mobitela:</p>
-    <input v-model="broj_mobitela" placeholder="Upišite broj mobitela" />
+    <p class="StanjeLj">Stanje Ljubimca:</p>
+    <input v-model="broj_mobitela" placeholder="Upišite u kakvom je stanju" />
 
     <p class="GeoLokacija">Označite na karti mjesto gdje je zadnje viđen:</p>
     <input v-model="geo_lokacija" placeholder="Treba dodat kartu" />
@@ -19,8 +19,20 @@
       placeholder="Upišite vrstu psa"
     />
 
+
+
+  <div class="Ogrlica">Ogrlica:</div>
+    <div class="OgrlicaDa">
+      <input type="radio" id="one" value="Da" v-model="ogrlica" />
+      <label for="Da">Da</label>
+
+      <input type="radio" id="two" value="Ne" v-model="ogrlica" />
+      <label for="Ne">Ne</label>
+    </div>
+
+
     <div class="Spol">Spol:</div>
-    <div class="CheckedNames">
+    <div class="Mz">
       <input type="radio" id="one" value="Muško" v-model="spol" />
       <label for="Muško">Muško</label>
 
@@ -50,6 +62,7 @@ export default {
       broj_mobitela: "",
       geo_lokacija: "",
       vrsta_psa: "",
+      ogrlica: "",
       spol: "",
       datum_nestanka: "",
     };
@@ -59,6 +72,7 @@ export default {
     this.broj_mobitela = localStorage.getItem("broj_mobitela");
     this.geo_lokacija = localStorage.getItem("geo_lokacija");
     this.vrsta_psa = localStorage.getItem("vrsta_psa");
+    this.ogrlica = localStorage.getItem("ogrlica");
     this.spol = localStorage.getItem("spol");
     this.datum_nestanka = localStorage.getItem("datum_nestanka");
     console.log(this.ime);
@@ -75,6 +89,7 @@ export default {
         broj_mobitela: this.broj_mobitela,
         geo_lokacija: this.geo_lokacija,
         vrsta_psa: this.vrsta_psa,
+        ogrlica: this.ogrlica,
         spol: this.spol,
         datum_nestanka: this.datum_nestanka,
       };
@@ -110,7 +125,7 @@ export default {
   font-size: 1cm;
 }
 
-.BrMob {
+.StanjeLj {
   font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
 }
@@ -123,6 +138,23 @@ export default {
 .Spol {
   font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
+}
+
+.Mz {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.7cm;
+  margin-bottom: 20px;
+}
+
+.Ogrlica {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1cm;
+}
+
+.OgrlicaDa {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.7cm;
+  margin-bottom: 20px;
 }
 
 .DatumNestanka {
