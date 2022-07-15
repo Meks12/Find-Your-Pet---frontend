@@ -50,12 +50,23 @@
         Spremi
       </button>
     </div>
+
+    <div>
+      <ButtonPodaciKorisnika />
+    </div>
+
   </div>
 </template>
 
 <script>
+
+import ButtonPodaciKorisnika from "../components/ButtonPodaciKorisnika.vue";
+
 export default {
   name: "PrijavaNestanka",
+  components: {
+    ButtonPodaciKorisnika
+  },
   data() {
     return {
       ime: "",
