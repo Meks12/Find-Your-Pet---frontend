@@ -4,6 +4,14 @@
       <h4>Your position</h4>
       Latitude: {{currPos.lat.toFixed(2)}}, Longitude: {{currPos.lng.toFixed(2)}}
     </div>
+    <div class="m-auto">
+      <h4>Clicked Position</h4>
+      <span v-if="otherPos">
+      Latitude: {{otherPos.lat.toFixed(2)}}, 
+      Longitude: {{otherPos.lng.toFixed(2)}}
+      </span>
+      <span v-else>Click the map to select a position</span>
+    </div>
   </div>
   <div ref="mapDiv" style="width: 100%; height: 80vh" />
 </template>
@@ -11,7 +19,7 @@
 <script>
 
 /* eslint-disable no-undef */
-import {computed, ref, onMounted} from 'vue'
+import {computed, ref, onMounted, onUnmounted} from 'vue'
 import GeoLocation from '../components/GeoLocation.vue'
 import {Loader} from '@googlemaps/js-api-loader'
 
@@ -25,16 +33,27 @@ export default {
       lat: coords.value.latitude,
       lng: coords.value.longitude
     }))
+    const otherPos = ref(null)
 
     const loader = new Loader({ apiKey: GOOGLE_MAPS_API_KEY})
     const mapDiv = ref(null)
-    onMounted(async () =>{
+    let map = ref(null)
+    let clickListener = null
+    onMounted(async () => {
       await loader.load()
-      new google.maps.Map(mapDiv.value, {
+      map.value = new google.maps.Map(mapDiv.value, {
         center: currPos.value, zoom: 7
-      }) 
+      })
+      clickListener = map.value.addListener('click',
+      ({ latLng: {lat, lng} }) =>
+      (otherPos.value = {lat: lat(), lng: lng() })
+      )
+      
     })
-    return {currPos, mapDiv}
+    onUnmounted(async () =>{
+      if (clickListener) clickListener.remove()
+    })
+    return {currPos, otherPos, mapDiv}
   }
 }
 </script>
