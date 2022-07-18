@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import PrijavaNestanka from '../views/PrijavaNestanka.vue'
 import PronadiLjubimca from '../views/PronadiLjubimca.vue'
 import PodaciKorisnika from '../views/PodaciKorisnika.vue'
+import GeoLokacija from '../views/GeoLokacija.vue'
 
 const routes = [
   {
@@ -30,8 +31,13 @@ const routes = [
   },
   {
     path: '/PodaciKorisnika',
-    name: "/PodaciKorisnika",
+    name: '/PodaciKorisnika',
     component: PodaciKorisnika
+  },
+  {
+    path: '/GeoLokacija',
+    name: '/GeoLokacija',
+    component: GeoLokacija
   }
 ]
 

@@ -5,6 +5,7 @@
     <router-link to="/PrijavaNestanka">Prijava Nestanka</router-link> |
     <router-link to="/PronadiLjubimca">Pronadi Ljubimca</router-link> |
     <router-link to="/PodaciKorisnika">Podaci Korisnika</router-link> |
+    <router-link to="/GeoLokacija">Geo Lokacija</router-link> |
   </nav>
   <router-view />
 </template>
