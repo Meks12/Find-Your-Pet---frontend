@@ -8,9 +8,8 @@
     />
     <p class="StanjeLj">Stanje Ljubimca:</p>
     <input v-model="broj_mobitela" placeholder="Upišite u kakvom je stanju" />
-
     <p class="GeoLokacija">Označite na karti mjesto gdje je zadnje viđen:</p>
-    <input v-model="geo_lokacija" placeholder="Treba dodat kartu" />
+    <ButtonGeoLokacija />
 
     <p class="VrPsa">Upišite vrstu psa:</p>
     <input
@@ -63,11 +62,13 @@
 
 <script>
 import ButtonPodaciKorisnika from "../components/ButtonPodaciKorisnika.vue";
+import ButtonGeoLokacija from "../components/ButtonGeoLokacija.vue";
 
 export default {
   name: "PrijavaNestanka",
   components: {
     ButtonPodaciKorisnika,
+    ButtonGeoLokacija,
   },
   data() {
     return {
