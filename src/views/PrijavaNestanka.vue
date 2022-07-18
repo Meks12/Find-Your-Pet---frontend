@@ -18,15 +18,15 @@
       v-model="vrsta_psa"
       placeholder="Upišite vrstu psa"
     />
-    <div class = "SlikaPsa"> 
-    Izaberite sliku psa
-    <div class="input-group mb-3">
-  <input type="file" class="form-control" id="inputGroupFile02">
-  <label class="input-group-text" for="inputGroupFile02">Upload</label>
-</div>
+    <div class="SlikaPsa">
+      Izaberite sliku psa
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02" />
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+      </div>
     </div>
 
-  <div class="Ogrlica">Ogrlica:</div>
+    <div class="Ogrlica">Ogrlica:</div>
     <div class="OgrlicaDa">
       <input type="radio" id="one" value="Da" v-model="ogrlica" />
       <label for="Da">Da</label>
@@ -34,7 +34,6 @@
       <input type="radio" id="two" value="Ne" v-model="ogrlica" />
       <label for="Ne">Ne</label>
     </div>
-
 
     <div class="Spol">Spol:</div>
     <div class="Mz">
@@ -59,18 +58,16 @@
     <div>
       <ButtonPodaciKorisnika />
     </div>
-
   </div>
 </template>
 
 <script>
-
 import ButtonPodaciKorisnika from "../components/ButtonPodaciKorisnika.vue";
 
 export default {
   name: "PrijavaNestanka",
   components: {
-    ButtonPodaciKorisnika
+    ButtonPodaciKorisnika,
   },
   data() {
     return {
@@ -148,7 +145,6 @@ export default {
   float: none;
   font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
-  
 }
 
 .StanjeLj {

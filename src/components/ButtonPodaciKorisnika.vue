@@ -1,7 +1,7 @@
 <template>
-    <div class = batun>
-  <button @click="goToPodaciKorisnika">Podaci Korisnika</button>
-    </div>
+  <div class="batun">
+    <button @click="goToPodaciKorisnika">Podaci Korisnika</button>
+  </div>
 </template>
 
 <script>
@@ -15,9 +15,7 @@ export default {
 </script>
 
 <style>
-
 .batun {
-    margin-top: 50px;
+  margin-top: 50px;
 }
-
 </style>

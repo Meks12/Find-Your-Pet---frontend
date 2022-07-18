@@ -1,7 +1,7 @@
 <template></template>
 
 <script>
-import {onMounted, onUnmounted, ref} from "@vue/runtime-core";
+import { onMounted, onUnmounted, ref } from "@vue/runtime-core";
 
 export default function GeoLocation() {
   const coords = ref({ latitude: 0, longitude: 0 });
