@@ -1,16 +1,15 @@
 <template></template>
 
 <script>
-import { onMounted, onUnmounted } from "@vue/runtime-core";
-import { useGeolocation } from "./useGeolocation";
+import {onMounted, onUnmounted, ref} from "@vue/runtime-core";
 
-export function useGeolocation() {
+export default function GeoLocation() {
   const coords = ref({ latitude: 0, longitude: 0 });
   const isSupported = "navigator" in window && "geolocation" in navigator;
 
   let watcher = null;
   onMounted(() => {
-    is(isSupported);
+    if (isSupported);
     watcher = navigator.geolocation.watchPosition(
       (position) => (coords.value = position.coords)
     );
