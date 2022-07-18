@@ -29,6 +29,23 @@
   <textarea class="form-control" placeholder="Dodajte komentar ovdje" id="floatingTextarea"></textarea>
 </div>
 
+<div class="Nagrada">
+<p>Nudite li nagradu za pronalazak ljubimca?</p>
+</div>
+<div class="Izaberiopciju">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Da
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Ne
+  </label>
+</div>
+</div>
 
 
 </template>
@@ -89,6 +106,21 @@ export default {
   float: none;
   font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
+}
+
+.Izaberiopciju{
+  padding: 15px;
+  width: 15cm;
+  margin: 0 auto;
+  float: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.6cm;
+}
+
+.Nagrada{
+  margin-top: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.6cm;
 }
 
 
