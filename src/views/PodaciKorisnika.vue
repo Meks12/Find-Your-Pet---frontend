@@ -6,6 +6,31 @@
   <input type="text" aria-label="First Name" class="form-control">
 </div>
 </div>
+
+<div class="Brtel">
+  <span class="input-group-text" id="basic-addon1">Broj telefona</span>
+  <input type="text" class="form-control" placeholder="Upisite broj telefona" aria-label="Upisite broj telefona" aria-describedby="basic-addon1">
+</div>
+
+<div class="Datum">
+  <span class="input-group-text" id="basic-addon1">Datum rođenja</span>
+  <input type="text" class="form-control" placeholder="Upisite datum rođenja" aria-label="Upisite datum rođenja" aria-describedby="basic-addon1">
+</div>
+
+<div class="Adresa">
+  <span class="input-group-text" id="basic-addon1">Adresa stanovanja</span>
+  <input type="text" class="form-control" placeholder="Upisite adresu" aria-label="Upisite adresu" aria-describedby="basic-addon1">
+</div>
+
+<div class="Komentar">
+  <div class="Komentarvelicina">
+   <label for="floatingTextarea">Dodajte komentar</label>
+  </div>
+  <textarea class="form-control" placeholder="Dodajte komentar ovdje" id="floatingTextarea"></textarea>
+</div>
+
+
+
 </template>
 
 <script>
@@ -17,6 +42,47 @@ export default {
  <style>
 
 .ImePrez{
+  padding: 15px;
+  width: 15cm;
+  margin: 0 auto;
+  float: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1cm;
+}
+
+
+.Brtel{
+  padding: 15px;
+  width: 15cm;
+  margin: 0 auto;
+  float: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1cm;
+}
+
+.Datum{
+  padding: 15px;
+  width: 15cm;
+  margin: 0 auto;
+  float: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1cm;
+}
+
+.Adresa{
+  padding: 15px;
+  width: 15cm;
+  margin: 0 auto;
+  float: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1cm;
+}
+
+.Komentarvelicina{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.5cm;
+}
+.Komentar{
   padding: 15px;
   width: 15cm;
   margin: 0 auto;
