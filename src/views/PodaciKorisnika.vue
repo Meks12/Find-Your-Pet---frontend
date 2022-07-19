@@ -93,7 +93,9 @@
   </div>
 
   <div class="ButtonSpremi">
-    <button type="button" class="btn btn-success">Spremi podatke</button>
+    <button type="button" v-on:click="posaljiBackend" class="btn btn-success">
+      Spremi podatke
+    </button>
   </div>
 
   <div class="PronadiLjubimcaButton">
