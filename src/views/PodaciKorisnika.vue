@@ -130,6 +130,25 @@ export default {
     this.nagrada = localStorage.getItem("nagrada");
     console.log(this.imeKorisnika);
   },
+  methods: {
+    posaljiBackend() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://localhost:3000/podacikorisnika");
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.setRequestHeader("Content-Type", "application/json");
+      let podaci = {
+        imeKorisnika: this.imeKorisnika,
+        prezimeKorisnika: this.prezimeKorisnika,
+        broj: this.broj,
+        datum: this.datum,
+        adresa: this.adresa,
+        komentar: this.komentar,
+        nagrada: this.nagrada,
+      };
+      console.log(podaci);
+      xhr.send(JSON.stringify(podaci));
+    },
+  },
 };
 </script>
 
