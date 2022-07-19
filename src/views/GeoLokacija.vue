@@ -21,6 +21,12 @@
     </div>
     <div ref="mapDiv" style="width: 100%; height: 80vh" />
   </div>
+
+  <div class="ButtonSpremi">
+    <button type="button" class="btn btn-success">
+      Spremi izabranu lokaciju
+    </button>
+  </div>
 </template>
 
 <script>
@@ -80,5 +86,10 @@ export default {
   width: 50%;
   border: 3px solid green;
   padding: 10px;
+}
+
+.ButtonSpremi {
+  margin-top: 30px;
+  font-family: "Times New Roman", Times, serif;
 }
 </style>
