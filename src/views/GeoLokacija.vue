@@ -2,24 +2,25 @@
   <div class="Naslov">
     <p>Geo Lokacija ljubimca</p>
   </div>
+  <div class="Mapa">
+    <div class="d-flex text-center" style="height: 20vh">
+      <div class="m-auto">
+        <h4>Moja pozicija</h4>
 
-  <div class="d-flex text-center" style="height: 20vh">
-    <div class="m-auto">
-      <h4>Moja pozicija</h4>
-
-      zemljopisna širina: {{ currPos.lat.toFixed(2) }}, zemljopisna dužina:
-      {{ currPos.lng.toFixed(2) }}
+        zemljopisna širina: {{ currPos.lat.toFixed(2) }}, zemljopisna dužina:
+        {{ currPos.lng.toFixed(2) }}
+      </div>
+      <div class="m-auto">
+        <h4>Označena pozicija</h4>
+        <span v-if="otherPos">
+          zemljopisna širina: {{ otherPos.lat.toFixed(2) }}, zemljopisna dužina:
+          {{ otherPos.lng.toFixed(2) }}
+        </span>
+        <span v-else>Klikom na mapu označavate poziciju</span>
+      </div>
     </div>
-    <div class="m-auto">
-      <h4>Označena pozicija</h4>
-      <span v-if="otherPos">
-        zemljopisna širina: {{ otherPos.lat.toFixed(2) }}, zemljopisna dužina:
-        {{ otherPos.lng.toFixed(2) }}
-      </span>
-      <span v-else>Klikom na mapu označavate poziciju</span>
-    </div>
+    <div ref="mapDiv" style="width: 100%; height: 80vh" />
   </div>
-  <div ref="mapDiv" style="width: 100%; height: 80vh" />
 </template>
 
 <script>
@@ -72,5 +73,12 @@ export default {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+.Mapa {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
 }
 </style>
