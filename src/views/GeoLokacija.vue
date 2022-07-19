@@ -1,5 +1,8 @@
 <template>
-  Geo lokacija izgubljenog ljubimca
+  <div class="Naslov">
+    <p>Geo Lokacija ljubimca</p>
+  </div>
+
   <div class="d-flex text-center" style="height: 20vh">
     <div class="m-auto">
       <h4>Moja pozicija</h4>
@@ -62,4 +65,12 @@ export default {
 </script>
 
 <style>
+.Naslov {
+  font-size: 50px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 </style>
