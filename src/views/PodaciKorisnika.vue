@@ -75,10 +75,24 @@
       <label class="form-check-label" for="flexRadioDefault2"> Ne </label>
     </div>
   </div>
+
+  <div class="ButtonSpremi">
+    <button type="button" class="btn btn-success">Spremi podatke</button>
+  </div>
+
+  <div class="PronadiLjubimcaButton">
+    <ButtonPronadi />
+  </div>
 </template>
 
 <script>
-export default {};
+import ButtonPronadi from "../components/ButtonPronadi.vue";
+
+export default {
+  components: {
+    ButtonPronadi,
+  },
+};
 </script>
 
  <style>
@@ -144,5 +158,9 @@ export default {};
   margin-top: 20px;
   font-family: "Times New Roman", Times, serif;
   font-size: 0.6cm;
+}
+
+.PronadiLjubimcaButton {
+  margin-top: 40px;
 }
 </style>
