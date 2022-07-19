@@ -1,4 +1,5 @@
 <template>
+  Geo lokacija izgubljenog ljubimca
   <div class="d-flex text-center" style="height: 20vh">
     <div class="m-auto">
       <h4>Moja pozicija</h4>
