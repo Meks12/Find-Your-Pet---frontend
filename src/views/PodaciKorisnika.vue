@@ -93,7 +93,11 @@
   </div>
 
   <div class="ButtonSpremi">
-    <button type="button" v-on:click="posaljiBackend" class="btn btn-success">
+    <button
+      type="button"
+      v-on:click="posaljiBackendKorisnik"
+      class="btn btn-success"
+    >
       Spremi podatke
     </button>
   </div>
@@ -133,7 +137,7 @@ export default {
     console.log(this.imeK);
   },
   methods: {
-    posaljiBackend() {
+    posaljiBackendKorisnik() {
       let xhr = new XMLHttpRequest();
       xhr.open("POST", "http://localhost:3000/podacikorisnika");
       xhr.setRequestHeader("Accept", "application/json");
