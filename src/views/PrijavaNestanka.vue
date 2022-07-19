@@ -1,36 +1,61 @@
 <template>
   <div class="Background">
-    <p class="ImeLj">Ime Ljubimca:</p>
-    <input
-      class="TextField1"
-      v-model="ime"
-      placeholder="Upišite ime ljubimca"
-    />
-    <p class="StanjeLj">Stanje Ljubimca:</p>
-    <input v-model="broj_mobitela" placeholder="Upišite u kakvom je stanju" />
-    <p class="GeoLokacija">Označite na karti mjesto gdje je zadnje viđen:</p>
+    <div class="Brtel">
+      <span class="input-group-text" id="basic-addon1">Ime ljubimca</span>
+      <input
+        type="text"
+        class="form-control"
+        v-model="ime"
+        placeholder="Upisite ime ljubimca"
+        aria-label="Upisite ime ljubimca"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="Brtel">
+      <span class="input-group-text" id="basic-addon1">Stanje ljubimca</span>
+      <input
+        type="text"
+        class="form-control"
+        v-model="stanje"
+        placeholder="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
+        aria-label="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <h3>
+      <span class="badge bg-secondary">Odaberi lokaciju</span>
+    </h3>
     <ButtonGeoLokacija />
 
-    <p class="VrPsa">Upišite vrstu psa:</p>
-    <input
-      class="VrstaPsa"
-      v-model="vrsta_psa"
-      placeholder="Upišite vrstu psa"
-    />
+    <div class="Brtel">
+      <span class="input-group-text" id="basic-addon1">Vrsta psa</span>
+      <input
+        type="text"
+        class="form-control"
+        v-model="vrsta_psa"
+        placeholder="Upisite vrstu vašeg psa"
+        aria-label="Upišite vrstu vašeg psa"
+        aria-describedby="basic-addon1"
+      />
+    </div>
     <div class="SlikaPsa">
-      Izaberite sliku psa
+      <h3>
+        <span class="badge bg-secondary">Odaberi sliku psa</span>
+      </h3>
       <div class="input-group mb-3">
         <input type="file" class="form-control" id="inputGroupFile02" />
         <label class="input-group-text" for="inputGroupFile02">Upload</label>
       </div>
     </div>
 
-    <div class="Ogrlica">Ogrlica:</div>
+    <h3>
+      <span class="badge bg-secondary">Je li ljubimac čipiran</span>
+    </h3>
     <div class="OgrlicaDa">
-      <input type="radio" id="one" value="Da" v-model="ogrlica" />
+      <input type="radio" id="one" value="Da" v-model="cip" />
       <label for="Da">Da</label>
 
-      <input type="radio" id="two" value="Ne" v-model="ogrlica" />
+      <input type="radio" id="two" value="Ne" v-model="cip" />
       <label for="Ne">Ne</label>
     </div>
 
@@ -73,20 +98,20 @@ export default {
   data() {
     return {
       ime: "",
-      broj_mobitela: "",
+      stanje: "",
       geo_lokacija: "",
       vrsta_psa: "",
-      ogrlica: "",
+      cip: "",
       spol: "",
       datum_nestanka: "",
     };
   },
   mounted() {
     this.ime = localStorage.getItem("ime");
-    this.broj_mobitela = localStorage.getItem("broj_mobitela");
+    this.stanje = localStorage.getItem("stanje");
     this.geo_lokacija = localStorage.getItem("geo_lokacija");
     this.vrsta_psa = localStorage.getItem("vrsta_psa");
-    this.ogrlica = localStorage.getItem("ogrlica");
+    this.cip = localStorage.getItem("cip");
     this.spol = localStorage.getItem("spol");
     this.datum_nestanka = localStorage.getItem("datum_nestanka");
     console.log(this.ime);
@@ -100,7 +125,7 @@ export default {
       xhr.setRequestHeader("Content-Type", "application/json");
       let podaci = {
         ime: this.ime,
-        broj_mobitela: this.broj_mobitela,
+        stanje: this.stanje,
         geo_lokacija: this.geo_lokacija,
         vrsta_psa: this.vrsta_psa,
         ogrlica: this.ogrlica,
