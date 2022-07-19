@@ -2,8 +2,18 @@
   <div class="ImePrez">
     <div class="input-group">
       <span class="input-group-text">Ime i prezime</span>
-      <input type="text" aria-label="Last Name" class="form-control" />
-      <input type="text" aria-label="First Name" class="form-control" />
+      <input
+        type="text"
+        aria-label="Last Name"
+        class="form-control"
+        v-model="imeKorisnka"
+      />
+      <input
+        type="text"
+        aria-label="First Name"
+        class="form-control"
+        v-model="prezimeKorisnika"
+      />
     </div>
   </div>
 
@@ -15,6 +25,7 @@
       placeholder="Upisite broj telefona"
       aria-label="Upisite broj telefona"
       aria-describedby="basic-addon1"
+      v-model="broj"
     />
   </div>
 
@@ -26,6 +37,7 @@
       placeholder="Upisite datum rođenja"
       aria-label="Upisite datum rođenja"
       aria-describedby="basic-addon1"
+      v-model="datum"
     />
   </div>
 
@@ -37,6 +49,7 @@
       placeholder="Upisite adresu"
       aria-label="Upisite adresu"
       aria-describedby="basic-addon1"
+      v-model="adresa"
     />
   </div>
 
@@ -48,6 +61,7 @@
       class="form-control"
       placeholder="Dodajte komentar ovdje"
       id="floatingTextarea"
+      v-model="komentar"
     ></textarea>
   </div>
 
@@ -59,6 +73,7 @@
       <input
         class="form-check-input"
         type="radio"
+        v-model="nagrada"
         name="flexRadioDefault"
         id="flexRadioDefault1"
       />
@@ -68,6 +83,7 @@
       <input
         class="form-check-input"
         type="radio"
+        v-model="nagrada"
         name="flexRadioDefault"
         id="flexRadioDefault2"
         checked
@@ -89,8 +105,30 @@
 import ButtonPronadi from "../components/ButtonPronadi.vue";
 
 export default {
+  name: "PodaciKorisnika",
   components: {
     ButtonPronadi,
+  },
+  data() {
+    return {
+      imeKorisnika: "",
+      prezimeKorisnika: "",
+      broj: "",
+      datum: "",
+      adresa: "",
+      komentar: "",
+      nagrada: "",
+    };
+  },
+  mounted() {
+    this.imeKorisnika = localStorage.getItem("imeKorisnika");
+    this.prezimeKorisnika = localStorage.getItem("prezimeKorisnika");
+    this.broj = localStorage.getItem("broj");
+    this.datum = localStorage.getItem("datum");
+    this.adresa = localStorage.getItem("adresa");
+    this.komentar = localStorage.getItem("komentar");
+    this.nagrada = localStorage.getItem("nagrada");
+    console.log(this.imeKorisnika);
   },
 };
 </script>
