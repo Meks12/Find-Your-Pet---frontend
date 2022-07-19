@@ -120,7 +120,7 @@ export default {
       imeKorisnika: "",
       prezimeKorisnika: "",
       broj: "",
-      datum: "petnajsti",
+      datum: "",
       adresa: "",
       komentar: "",
       nagrada: "",
