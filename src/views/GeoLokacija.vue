@@ -27,6 +27,10 @@
       Spremi izabranu lokaciju
     </button>
   </div>
+
+  <div class="ButtonPodaci">
+    <ButtonPodaciKorisnika />
+  </div>
 </template>
 
 <script>
@@ -34,11 +38,15 @@
 import { computed, ref, onMounted, onUnmounted } from "vue";
 import GeoLocation from "../components/GeoLocation.vue";
 import { Loader } from "@googlemaps/js-api-loader";
+import ButtonPodaciKorisnika from "../components/ButtonPodaciKorisnika.vue";
 
 const GOOGLE_MAPS_API_KEY = "AIzaSyCh-kFS3bfWJBkAlSFrcWUoCesLXZaI9_A";
 
 export default {
   name: "GeoLokacija",
+  components: {
+    ButtonPodaciKorisnika,
+  },
   setup() {
     const { coords } = GeoLocation();
     const currPos = computed(() => ({
