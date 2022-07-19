@@ -28,8 +28,8 @@
     </button>
   </div>
 
-  <div class="ButtonPodaci">
-    <ButtonPodaciKorisnika />
+  <div class="ButtonPrijava">
+    <Button />
   </div>
 </template>
 
@@ -38,14 +38,14 @@
 import { computed, ref, onMounted, onUnmounted } from "vue";
 import GeoLocation from "../components/GeoLocation.vue";
 import { Loader } from "@googlemaps/js-api-loader";
-import ButtonPodaciKorisnika from "../components/ButtonPodaciKorisnika.vue";
+import Button from "@/components/Button.vue";
 
 const GOOGLE_MAPS_API_KEY = "AIzaSyCh-kFS3bfWJBkAlSFrcWUoCesLXZaI9_A";
 
 export default {
   name: "GeoLokacija",
   components: {
-    ButtonPodaciKorisnika,
+    Button,
   },
   setup() {
     const { coords } = GeoLocation();
@@ -99,5 +99,9 @@ export default {
 .ButtonSpremi {
   margin-top: 30px;
   font-family: "Times New Roman", Times, serif;
+}
+
+.ButtonPrijava {
+  margin-top: 20px;
 }
 </style>
