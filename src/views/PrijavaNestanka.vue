@@ -59,7 +59,9 @@
       <label for="Ne">Ne</label>
     </div>
 
-    <div class="Spol">Spol:</div>
+    <h3>
+      <span class="badge bg-secondary">Spol</span>
+    </h3>
     <div class="Mz">
       <input type="radio" id="one" value="Muško" v-model="spol" />
       <label for="Muško">Muško</label>
@@ -69,7 +71,9 @@
     </div>
 
     <div>
-      <p class="DatumNestanka">Datum Nestanka:</p>
+      <h3>
+        <span class="badge bg-secondary">Datum nestanka</span>
+      </h3>
       <input v-model="datum_nestanka" placeholder="Upišite datum nestanka" />
     </div>
 
@@ -128,7 +132,7 @@ export default {
         stanje: this.stanje,
         geo_lokacija: this.geo_lokacija,
         vrsta_psa: this.vrsta_psa,
-        ogrlica: this.ogrlica,
+        cip: this.cip,
         spol: this.spol,
         datum_nestanka: this.datum_nestanka,
       };
@@ -140,30 +144,6 @@ export default {
 </script>
 
 <style>
-.Background {
-  background-size: cover;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  min-height: 100%;
-}
-
-.CheckedNames {
-  margin-top: 20px;
-}
-.VrPsa {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1cm;
-}
-.VrstaPsa {
-  margin-bottom: 20px;
-}
-
-.ImeLj {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1cm;
-}
-
 .SlikaPsa {
   padding: 15px;
   width: 15cm;
@@ -171,16 +151,6 @@ export default {
   float: none;
   font-family: "Times New Roman", Times, serif;
   font-size: 1cm;
-}
-
-.StanjeLj {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1cm;
-}
-
-.GeoLokacija {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 0.9cm;
 }
 
 .Spol {
@@ -194,20 +164,10 @@ export default {
   margin-bottom: 20px;
 }
 
-.Ogrlica {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1cm;
-}
-
 .OgrlicaDa {
   font-family: "Times New Roman", Times, serif;
   font-size: 0.7cm;
   margin-bottom: 20px;
-}
-
-.DatumNestanka {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1cm;
 }
 
 .Spremi {
