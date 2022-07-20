@@ -44,7 +44,12 @@
       </h3>
       <div class="input-group mb-3">
         <input type="file" class="form-control" id="inputGroupFile02" />
-        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        <label
+          class="input-group-text"
+          for="inputGroupFile02"
+          v-bind:src="slika"
+          >Upload</label
+        >
       </div>
     </div>
 
@@ -105,6 +110,7 @@ export default {
       stanje: "",
       geo_lokacija: "",
       vrsta_psa: "",
+      slika: "",
       cip: "",
       spol: "",
       datum_nestanka: "",
@@ -115,6 +121,7 @@ export default {
     this.stanje = localStorage.getItem("stanje");
     this.geo_lokacija = localStorage.getItem("geo_lokacija");
     this.vrsta_psa = localStorage.getItem("vrsta_psa");
+    this.slika = localStorage.getItem("slika");
     this.cip = localStorage.getItem("cip");
     this.spol = localStorage.getItem("spol");
     this.datum_nestanka = localStorage.getItem("datum_nestanka");
@@ -132,6 +139,7 @@ export default {
         stanje: this.stanje,
         geo_lokacija: this.geo_lokacija,
         vrsta_psa: this.vrsta_psa,
+        slika: this.slika,
         cip: this.cip,
         spol: this.spol,
         datum_nestanka: this.datum_nestanka,
