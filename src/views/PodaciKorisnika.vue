@@ -139,7 +139,7 @@ export default {
   methods: {
     posaljiBackendKorisnik() {
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://localhost:3000/podacikorisnika");
+      xhr.open("POST", "http://localhost:3000/podacivlasnika");
       xhr.setRequestHeader("Accept", "application/json");
       xhr.setRequestHeader("Content-Type", "application/json");
       let podaci = {
