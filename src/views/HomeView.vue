@@ -1,18 +1,16 @@
 <template>
-  <div class="bgcolor">
-    <div class="GlavniNaslov">
-      <h1>Pet Finder App</h1>
-    </div>
-    <div class="Button">
-      <Button />
-    </div>
-    <div class="ButtonPronadi">
-      <ButtonPronadi />
-    </div>
+  <div class="GlavniNaslov">
+    <h1>Pet Finder App</h1>
+  </div>
+  <div class="Button">
+    <Button />
+  </div>
+  <div class="ButtonPronadi">
+    <ButtonPronadi />
+  </div>
 
-    <div class="AdminButton">
-      <ButtonAdmin />
-    </div>
+  <div class="AdminButton">
+    <ButtonAdmin />
   </div>
 </template>
 
