@@ -8,10 +8,6 @@
   <div class="ButtonPronadi">
     <ButtonPronadi />
   </div>
-
-  <div class="AdminButton">
-    <ButtonAdmin />
-  </div>
 </template>
 
 <script>
