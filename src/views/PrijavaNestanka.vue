@@ -1,4 +1,9 @@
 <template>
+  <h3>
+    <span class="badge bg-secondary">Odaberi lokaciju</span>
+  </h3>
+  <ButtonGeoLokacija />
+
   <div class="Background">
     <div class="Brtel">
       <span class="input-group-text" id="basic-addon1">Ime ljubimca</span>
@@ -22,10 +27,6 @@
         aria-describedby="basic-addon1"
       />
     </div>
-    <h3>
-      <span class="badge bg-secondary">Odaberi lokaciju</span>
-    </h3>
-    <ButtonGeoLokacija />
 
     <div class="Brtel">
       <span class="input-group-text" id="basic-addon1">Vrsta psa</span>
