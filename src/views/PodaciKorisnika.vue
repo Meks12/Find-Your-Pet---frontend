@@ -155,6 +155,12 @@ export default {
       xhr.send(JSON.stringify(podaci));
     },
   },
+  async created() {
+    const response = await fetch("http://localhost:3000/podacivlasnika");
+    const data = await response.json();
+    this.totalVuePackages = data.total;
+    console.log(data);
+  },
 };
 </script>
 
