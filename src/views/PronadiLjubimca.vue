@@ -1,24 +1,37 @@
 <template>
   <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
-  <Cards class="left-one"></Cards>
   <div v-for="vlasnik in Vlasnici" :key="vlasnik">
-    {{ vlasnik.ime }}
+    {{ vlasnik }}
   </div>
   <div v-for="ljubimac in Ljubimci" :key="ljubimac">
     {{ ljubimac.ime }}
   </div>
 
-  <div>
-    <Cards class="left-two" />
+  <div v-for="ljubimac in Ljubimci" :key="ljubimac">
+    <div class="card" style="width: 30rem">
+      <img class="card-img-top" alt="Card image cap" />
+      <div class="card-body">
+        <h5 class="card-title">{{ ljubimac.ime }}</h5>
+        <p class="card-text">Informacije o izgubljenom ljubimcu</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Livio</li>
+        <li class="list-group-item">5 godina</li>
+        <li class="list-group-item">M</li>
+      </ul>
+      <div class="card-body"></div>
+    </div>
   </div>
 </template>
 
 <script>
 import Cards from "@/components/Cards.vue";
+import LjubimciCard from "@/components/LjubimciCard.vue";
 export default {
   name: "PronadiLjubimca",
   components: {
     Cards,
+    LjubimciCard,
   },
 
   data() {
