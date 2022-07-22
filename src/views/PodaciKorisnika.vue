@@ -65,31 +65,15 @@
     ></textarea>
   </div>
 
+  <h3>
+    <span class="badge bg-secondary">Nudite li nagradu: </span>
+  </h3>
   <div class="Nagrada">
-    <p>Nudite li nagradu za pronalazak ljubimca?</p>
-  </div>
-  <div class="Izaberiopciju">
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        v-model="nagrada"
-        name="flexRadioDefault"
-        id="flexRadioDefault1"
-      />
-      <label class="form-check-label" for="flexRadioDefault1"> Da </label>
-    </div>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        v-model="nagrada"
-        name="flexRadioDefault"
-        id="flexRadioDefault2"
-        checked
-      />
-      <label class="form-check-label" for="flexRadioDefault2"> Ne </label>
-    </div>
+    <input type="radio" id="one" value="Da" v-model="nagrada" />
+    <label for="Da">Da</label>
+
+    <input type="radio" id="two" value="Ne" v-model="nagrada" />
+    <label for="Ne">Ne</label>
   </div>
 
   <div class="ButtonSpremi">
