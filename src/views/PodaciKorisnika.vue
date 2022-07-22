@@ -164,7 +164,7 @@ export default {
 };
 </script>
 
- <style>
+<style>
 .ImePrez {
   padding: 15px;
   width: 15cm;

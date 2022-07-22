@@ -94,11 +94,16 @@
       <ButtonPodaciKorisnika />
     </div>
   </div>
+  <div class="proba">
+    <input type="file" @change="onFileSelected" />
+    <button @click="onUpload">Upload</button>
+  </div>
 </template>
 
 <script>
 import ButtonPodaciKorisnika from "../components/ButtonPodaciKorisnika.vue";
 import ButtonGeoLokacija from "../components/ButtonGeoLokacija.vue";
+import axios from "axios";
 
 export default {
   name: "PrijavaNestanka",
@@ -116,6 +121,7 @@ export default {
       cip: "",
       spol: "",
       datum_nestanka: "",
+      selectedFile: null,
     };
   },
   mounted() {
@@ -148,6 +154,20 @@ export default {
       };
       console.log(podaci);
       xhr.send(JSON.stringify(podaci));
+    },
+    onFileSelected(event) {
+      console.log("hello");
+      this.selectedFile = event.target.files[0];
+      console.log(this.selectedFile);
+    },
+    onUpload() {
+      console.log("da");
+      const fd = new FormData();
+      fd.append("image", this.selectedFile, this.selectedFile.name);
+      console.log(fd);
+      axios.post("http://localhost:3000/prijavanestanka", fd).then((res) => {
+        console.log(res);
+      });
     },
   },
   async created() {
