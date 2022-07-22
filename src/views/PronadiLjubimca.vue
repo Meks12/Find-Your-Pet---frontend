@@ -2,8 +2,13 @@
   <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
   <Cards class="left-one"></Cards>
   <div v-for="vlasnik in Vlasnici" :key="vlasnik">
-    {{ vlasnik }}
+    {{ vlasnik.ime }}
   </div>
+  ,
+  <div v-for="ljubimac in Ljubimci" :key="ljubimac">
+    {{ ljubimac.ime }}
+  </div>
+
   <div>
     <Cards class="left-two" />
   </div>
@@ -20,6 +25,7 @@ export default {
   data() {
     return {
       Vlasnici: [],
+      Ljubimci: [],
     };
   },
 
@@ -29,9 +35,16 @@ export default {
       const vlasnici = await response.json();
       return vlasnici;
     },
+
+    async getLjubimci() {
+      const response = await fetch("http://localhost:3000/prijavanestanka");
+      const ljubimci = await response.json();
+      return ljubimci;
+    },
   },
   async mounted() {
     this.Vlasnici = await this.getVlasnici();
+    this.Ljubimci = await this.getLjubimci();
   },
 };
 </script>
