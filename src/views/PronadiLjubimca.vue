@@ -15,7 +15,7 @@
         <p class="card-text">Informacije o izgubljenom ljubimcu</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Livio</li>
+        <li class="list-group-item">{{ ljubimac.vrsta_psa }}</li>
         <li class="list-group-item">5 godina</li>
         <li class="list-group-item">M</li>
       </ul>
