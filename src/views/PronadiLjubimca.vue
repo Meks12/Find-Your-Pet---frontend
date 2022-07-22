@@ -4,7 +4,6 @@
   <div v-for="vlasnik in Vlasnici" :key="vlasnik">
     {{ vlasnik.ime }}
   </div>
-  ,
   <div v-for="ljubimac in Ljubimci" :key="ljubimac">
     {{ ljubimac.ime }}
   </div>
