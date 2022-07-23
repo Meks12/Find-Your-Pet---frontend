@@ -11,13 +11,15 @@
     <div class="card" style="width: 30rem">
       <img class="card-img-top" alt="Card image cap" />
       <div class="card-body">
-        <h5 class="card-title">{{ ljubimac.ime }}</h5>
+        <h5 class="card-title">Ime izgubljenog psa: {{ ljubimac.ime }}</h5>
         <p class="card-text">Informacije o izgubljenom ljubimcu</p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">{{ ljubimac.vrsta_psa }}</li>
-        <li class="list-group-item">5 godina</li>
-        <li class="list-group-item">M</li>
+        <li class="list-group-item">{{ ljubimac.stanje }}</li>
+        <li class="list-group-item">{{ ljubimac.cip }}</li>
+        <li class="list-group-item">{{ ljubimac.spol }}</li>
+        <li class="list-group-item">{{ ljubimac.datum_nestanka }}</li>
       </ul>
       <div class="card-body"></div>
     </div>
