@@ -6,13 +6,13 @@
         type="text"
         aria-label="Last Name"
         class="form-control"
-        v-model="imeK"
+        v-model="ime"
       />
       <input
         type="text"
         aria-label="First Name"
         class="form-control"
-        v-model="prezimeK"
+        v-model="prezime"
       />
     </div>
   </div>
@@ -111,8 +111,8 @@ export default {
     };
   },
   mounted() {
-    this.imeK = localStorage.getItem("imeK");
-    this.prezimeK = localStorage.getItem("prezimeK");
+    this.ime = localStorage.getItem("ime");
+    this.prezime = localStorage.getItem("prezime");
     this.broj = localStorage.getItem("broj");
     this.datum = localStorage.getItem("datum");
     this.adresa = localStorage.getItem("adresa");
@@ -127,8 +127,8 @@ export default {
       xhr.setRequestHeader("Accept", "application/json");
       xhr.setRequestHeader("Content-Type", "application/json");
       let podaci = {
-        imeK: this.imeK,
-        prezimeK: this.prezimeK,
+        ime: this.ime,
+        prezime: this.prezime,
         broj: this.broj,
         datum: this.datum,
         adresa: this.adresa,
