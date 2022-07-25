@@ -76,7 +76,7 @@
     <label for="Ne">Ne</label>
   </div>
   <div class="Izaberi">
-    Izaberite ime vašeg ljubimca
+    Izaberite ime vašeg ljubimca:
     <div class="Odaberi">
       <select
         class="form-select"

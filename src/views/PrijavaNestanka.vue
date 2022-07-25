@@ -46,12 +46,7 @@
       </h3>
       <div class="input-group mb-3">
         <input type="file" class="form-control" id="inputGroupFile02" />
-        <label
-          class="input-group-text"
-          for="inputGroupFile02"
-          v-bind:src="slika"
-          >Upload</label
-        >
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
       </div>
     </div>
 
@@ -156,12 +151,10 @@ export default {
       xhr.send(JSON.stringify(podaci));
     },
     onFileSelected(event) {
-      console.log("hello");
       this.selectedFile = event.target.files[0];
       console.log(this.selectedFile);
     },
     onUpload() {
-      console.log("da");
       const fd = new FormData();
       fd.append("image", this.selectedFile, this.selectedFile.name);
       console.log(fd);

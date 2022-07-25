@@ -4,7 +4,6 @@ import PrijavaNestanka from "../views/PrijavaNestanka.vue";
 import PronadiLjubimca from "../views/PronadiLjubimca.vue";
 import PodaciKorisnika from "../views/PodaciKorisnika.vue";
 import GeoLokacija from "../views/GeoLokacija.vue";
-import DetaljiVlasnika from "../views/DetaljiVlasnika.vue";
 
 const routes = [
   {
@@ -12,15 +11,7 @@ const routes = [
     name: "home",
     component: HomeView,
   },
-  {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-  },
+
   {
     path: "/prijavanestanka",
     name: "prijavanestanka",
@@ -40,11 +31,6 @@ const routes = [
     path: "/GeoLokacija",
     name: "/GeoLokacija",
     component: GeoLokacija,
-  },
-  {
-    path: "/DetaljiVlasnika",
-    name: "/DetaljiVlasnika",
-    component: DetaljiVlasnika,
   },
 ];
 

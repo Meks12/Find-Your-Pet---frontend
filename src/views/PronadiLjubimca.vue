@@ -11,12 +11,16 @@
     <div class="d-flex justify content-start">
       <div v-for="ljubimac in Ljubimci" :key="ljubimac">
         <div class="card" style="width: 30rem">
+          <img src="@/assets/petpics.jpg" class="w3-round" alt="zivotinja" />
           <img class="card-img-top" alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">Ime izgubljenog psa: {{ ljubimac.ime }}</h5>
             <p class="card-text">Informacije o izgubljenom ljubimcu</p>
           </div>
           <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
+            </li>
             <li class="list-group-item">
               Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
             </li>
@@ -65,7 +69,6 @@
             </div>
           </ul>
         </div>
-        <DetaljiVlasnikaButton />
         <button
           type="button"
           @click="izbrisi(ljubimac._id)"
@@ -83,14 +86,12 @@
 <script>
 import Cards from "@/components/Cards.vue";
 import LjubimciCard from "@/components/LjubimciCard.vue";
-import DetaljiVlasnikaButton from "@/components/DetaljiVlasnikaButton.vue";
 import axios from "axios";
 export default {
   name: "PronadiLjubimca",
   components: {
     Cards,
     LjubimciCard,
-    DetaljiVlasnikaButton,
   },
 
   data() {
