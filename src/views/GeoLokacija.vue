@@ -19,11 +19,18 @@
         <span v-else>Klikom na mapu označavate poziciju</span>
       </div>
     </div>
+    proba
+
+    {{ otherPos }}
     <div ref="mapDiv" style="width: 100%; height: 80vh" />
   </div>
 
   <div class="ButtonSpremi">
-    <button type="button" class="btn btn-success">
+    <button
+      type="button"
+      v-on:click="posaljiBackendLokacija"
+      class="btn btn-success"
+    >
       Spremi izabranu lokaciju
     </button>
   </div>
@@ -31,6 +38,7 @@
   <div class="ButtonPrijava">
     <Button />
   </div>
+  proba
 </template>
 
 <script>
@@ -46,6 +54,29 @@ export default {
   name: "GeoLokacija",
   components: {
     Button,
+  },
+  data() {
+    return {
+      currPos: "",
+      otherPos: "",
+    };
+  },
+  async mounted() {
+    this.otherPos = localStorage.getItem("pozicija");
+    console.log(this.otherPos);
+  },
+  methods: {
+    posaljiBackendLokacija() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://localhost:3000/prijavanestanka");
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.setRequestHeader("Content-Type", "application/json");
+      let podaci = {
+        otherPos: this.otherPos,
+      };
+      console.log(podaci);
+      xhr.send(JSON.stringify(podaci));
+    },
   },
   setup() {
     const { coords } = GeoLocation();

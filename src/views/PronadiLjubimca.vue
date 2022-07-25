@@ -25,7 +25,8 @@
               Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
             </li>
             <li class="list-group-item">
-              Stanje u kojem je pas zadnji put viđen: {{ ljubimac.stanje }}
+              Detaljan opis mjesta gdje je pas zadnji put viđen:
+              {{ ljubimac.stanje }}
             </li>
             <li class="list-group-item">
               Status čipiranja: {{ ljubimac.cip }}
