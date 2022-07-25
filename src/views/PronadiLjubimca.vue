@@ -25,6 +25,9 @@
               Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
             </li>
             <li class="list-group-item">
+              Tocna geolokacija nestanka: {{ ljubimac.otherPos }}
+            </li>
+            <li class="list-group-item">
               Detaljan opis mjesta gdje je pas zadnji put viđen:
               {{ ljubimac.stanje }}
             </li>

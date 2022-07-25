@@ -19,10 +19,28 @@
         <span v-else>Klikom na mapu označavate poziciju</span>
       </div>
     </div>
-    proba
 
     {{ otherPos }}
     <div ref="mapDiv" style="width: 100%; height: 80vh" />
+  </div>
+
+  <div class="Izaberi">
+    Izaberite ime vašeg ljubimca:
+    <div class="Odaberi">
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        v-model="odabraniLjubimac"
+      >
+        <option
+          v-for="ljubimac in Ljubimci"
+          :key="ljubimac"
+          :value="ljubimac.ime"
+        >
+          {{ ljubimac.ime }}
+        </option>
+      </select>
+    </div>
   </div>
 
   <div class="ButtonSpremi">
@@ -38,7 +56,6 @@
   <div class="ButtonPrijava">
     <Button />
   </div>
-  proba
 </template>
 
 <script>
@@ -59,10 +76,13 @@ export default {
     return {
       currPos: "",
       otherPos: "",
+      Ljubimci: [],
+      odabraniLjubimac: "",
     };
   },
   async mounted() {
     this.otherPos = localStorage.getItem("pozicija");
+    this.odabraniLjubimac = localStorage.getItem("odabraniLjubimac");
     console.log(this.otherPos);
   },
   methods: {
@@ -73,9 +93,15 @@ export default {
       xhr.setRequestHeader("Content-Type", "application/json");
       let podaci = {
         otherPos: this.otherPos,
+        ljubimac: this.odabraniLjubimac,
       };
       console.log(podaci);
       xhr.send(JSON.stringify(podaci));
+    },
+    async getLjubimci() {
+      const response = await fetch("http://localhost:3000/prijavanestanka");
+      const ljubimci = await response.json();
+      return ljubimci;
     },
   },
   setup() {
