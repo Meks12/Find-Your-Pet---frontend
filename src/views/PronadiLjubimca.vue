@@ -61,7 +61,10 @@
           </ul>
         </div>
         <DetaljiVlasnikaButton />
+        <button type="button" class="btn btn-danger">Izbrisi</button>
+        <button type="button" class="btn btn-secondary">Izmjeni</button>
       </div>
+      <div></div>
     </div>
   </div>
 </template>
@@ -70,6 +73,7 @@
 import Cards from "@/components/Cards.vue";
 import LjubimciCard from "@/components/LjubimciCard.vue";
 import DetaljiVlasnikaButton from "@/components/DetaljiVlasnikaButton.vue";
+import axios from "axios";
 export default {
   name: "PronadiLjubimca",
   components: {
