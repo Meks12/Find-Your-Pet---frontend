@@ -89,6 +89,15 @@
   <div class="PronadiLjubimcaButton">
     <ButtonPronadi />
   </div>
+  <select
+    class="form-select"
+    aria-label="Default select example"
+    v-model="odabraniLjubimac"
+  >
+    <option v-for="ljubimac in Ljubimci" :key="ljubimac" :value="ljubimac.ime">
+      {{ ljubimac.ime }}
+    </option>
+  </select>
 </template>
 
 <script>
@@ -108,9 +117,11 @@ export default {
       adresa: "",
       komentar: "",
       nagrada: "",
+      Ljubimci: [],
+      odabraniLjubimac: "",
     };
   },
-  mounted() {
+  async mounted() {
     this.ime = localStorage.getItem("ime");
     this.prezime = localStorage.getItem("prezime");
     this.broj = localStorage.getItem("broj");
@@ -119,6 +130,8 @@ export default {
     this.komentar = localStorage.getItem("komentar");
     this.nagrada = localStorage.getItem("nagrada");
     console.log(this.imeK);
+    this.Ljubimci = await this.getLjubimci();
+    this.odabraniLjubimac = localStorage.getItem("odabraniLjubimac");
   },
   methods: {
     posaljiBackendKorisnik() {
@@ -134,9 +147,15 @@ export default {
         adresa: this.adresa,
         komentar: this.komentar,
         nagrada: this.nagrada,
+        ljubimac: this.odabraniLjubimac,
       };
       console.log(podaci);
       xhr.send(JSON.stringify(podaci));
+    },
+    async getLjubimci() {
+      const response = await fetch("http://localhost:3000/prijavanestanka");
+      const ljubimci = await response.json();
+      return ljubimci;
     },
   },
   async created() {

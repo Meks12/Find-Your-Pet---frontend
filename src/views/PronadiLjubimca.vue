@@ -51,8 +51,13 @@
                   data-bs-parent="#accordionExample"
                 >
                   <div class="accordion-body">
-                    <div v-for="vlasnik in Vlasnici" :key="vlasnik">
-                      {{ vlasnik.ime }}
+                    <div>
+                      {{
+                        Vlasnici.find(
+                          (jedanVlasnik) =>
+                            jedanVlasnik.ljubimac === ljubimac.ime
+                        )
+                      }}
                     </div>
                   </div>
                 </div>
@@ -61,7 +66,13 @@
           </ul>
         </div>
         <DetaljiVlasnikaButton />
-        <button type="button" class="btn btn-danger">Izbrisi</button>
+        <button
+          type="button"
+          @click="izbrisi(ljubimac._id)"
+          class="btn btn-danger"
+        >
+          Izbrisi
+        </button>
         <button type="button" class="btn btn-secondary">Izmjeni</button>
       </div>
       <div></div>
@@ -100,6 +111,16 @@ export default {
       const response = await fetch("http://localhost:3000/prijavanestanka");
       const ljubimci = await response.json();
       return ljubimci;
+    },
+    async izbrisi(ljubimac_id) {
+      const response = await fetch(
+        `http://localhost:3000/prijavanestanka/${ljubimac_id}`,
+        { method: "DELETE" }
+      );
+      const status = await response.json();
+      this.Ljubimci = this.Ljubimci.filter(
+        (ljubimac) => ljubimac._id !== ljubimac_id
+      );
     },
   },
   async mounted() {
