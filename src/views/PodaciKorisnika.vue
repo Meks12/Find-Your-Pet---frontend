@@ -75,7 +75,24 @@
     <input type="radio" id="two" value="Ne" v-model="nagrada" />
     <label for="Ne">Ne</label>
   </div>
-
+  <div class="Izaberi">
+    Izaberite ime vašeg ljubimca
+    <div class="Odaberi">
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        v-model="odabraniLjubimac"
+      >
+        <option
+          v-for="ljubimac in Ljubimci"
+          :key="ljubimac"
+          :value="ljubimac.ime"
+        >
+          {{ ljubimac.ime }}
+        </option>
+      </select>
+    </div>
+  </div>
   <div class="ButtonSpremi">
     <button
       type="button"
@@ -89,15 +106,6 @@
   <div class="PronadiLjubimcaButton">
     <ButtonPronadi />
   </div>
-  <select
-    class="form-select"
-    aria-label="Default select example"
-    v-model="odabraniLjubimac"
-  >
-    <option v-for="ljubimac in Ljubimci" :key="ljubimac" :value="ljubimac.ime">
-      {{ ljubimac.ime }}
-    </option>
-  </select>
 </template>
 
 <script>
@@ -234,5 +242,19 @@ export default {
 
 .PronadiLjubimcaButton {
   margin-top: 40px;
+}
+
+.Odaberi {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+}
+
+.Izaberi {
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 20px;
+  font-size: 20px;
 }
 </style>

@@ -29,7 +29,7 @@
     </div>
 
     <div class="Brtel">
-      <span class="input-group-text" id="basic-addon1">Vrsta psa</span>
+      <span class="input-group-text" id="basic-addon1">Vrsta ljubimca</span>
       <input
         type="text"
         class="form-control"
