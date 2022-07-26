@@ -96,9 +96,9 @@
                               jedanVlasnik.ljubimac === ljubimac.ime
                           ).datum
                         }}
-                        Adresa stanovanja vlasnika:
                       </li>
                       <li class="list-group-item">
+                        Adresa stanovanja vlasnika:
                         {{
                           Vlasnici.find(
                             (jedanVlasnik) =>
