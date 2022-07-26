@@ -83,7 +83,8 @@ export default {
   async mounted() {
     this.otherPos = localStorage.getItem("pozicija");
     this.odabraniLjubimac = localStorage.getItem("odabraniLjubimac");
-    console.log(this.otherPos);
+    this.Ljubimci = await this.getLjubimci();
+    console.log(this.Ljubimci);
   },
   methods: {
     posaljiBackendLokacija() {
@@ -101,6 +102,7 @@ export default {
     async getLjubimci() {
       const response = await fetch("http://localhost:3000/prijavanestanka");
       const ljubimci = await response.json();
+      console.log(ljubimci);
       return ljubimci;
     },
   },

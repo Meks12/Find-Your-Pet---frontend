@@ -22,10 +22,11 @@
               Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
             </li>
             <li class="list-group-item">
-              Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
+              Stanje ljubimca: {{ ljubimac.stanje }}
             </li>
-            <li class="list-group-item">
-              Tocna geolokacija nestanka: {{ ljubimac.otherPos }}
+            <li v-if="ljubimac.otherPos" class="list-group-item">
+              Geografska dužina: {{ ljubimac.otherPos.lng }} Geografska širina:
+              {{ ljubimac.otherPos.lat }}
             </li>
             <li class="list-group-item">
               Detaljan opis mjesta gdje je pas zadnji put viđen:
@@ -60,12 +61,62 @@
                 >
                   <div class="accordion-body">
                     <div>
-                      {{
-                        Vlasnici.find(
-                          (jedanVlasnik) =>
-                            jedanVlasnik.ljubimac === ljubimac.ime
-                        )
-                      }}
+                      <li class="list-group-item">
+                        {{
+                          Vlasnici.find(
+                            (jedanVlasnik) =>
+                              jedanVlasnik.ljubimac === ljubimac.ime
+                          ).ime
+                        }}
+                      </li>
+                      <li class="list-group-item">
+                        {{
+                          Vlasnici.find(
+                            (jedanVlasnik) =>
+                              jedanVlasnik.ljubimac === ljubimac.ime
+                          ).prezime
+                        }}
+                      </li>
+                      <li class="list-group-item">
+                        {{
+                          Vlasnici.find(
+                            (jedanVlasnik) =>
+                              jedanVlasnik.ljubimac === ljubimac.ime
+                          ).broj
+                        }}
+                      </li>
+                      <li class="list-group-item">
+                        {{
+                          Vlasnici.find(
+                            (jedanVlasnik) =>
+                              jedanVlasnik.ljubimac === ljubimac.ime
+                          ).datum
+                        }}
+                      </li>
+                      <li class="list-group-item">
+                        {{
+                          Vlasnici.find(
+                            (jedanVlasnik) =>
+                              jedanVlasnik.ljubimac === ljubimac.ime
+                          ).adresa
+                        }}
+                      </li>
+                      <li class="list-group-item">
+                        {{
+                          Vlasnici.find(
+                            (jedanVlasnik) =>
+                              jedanVlasnik.ljubimac === ljubimac.ime
+                          ).komentar
+                        }}
+                      </li>
+                      <li class="list-group-item">
+                        {{
+                          Vlasnici.find(
+                            (jedanVlasnik) =>
+                              jedanVlasnik.ljubimac === ljubimac.ime
+                          ).nagrada
+                        }}
+                      </li>
                     </div>
                   </div>
                 </div>
