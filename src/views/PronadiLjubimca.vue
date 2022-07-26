@@ -14,7 +14,9 @@
           <img src="@/assets/petpics.jpg" class="w3-round" alt="zivotinja" />
           <img class="card-img-top" alt="Card image cap" />
           <div class="card-body">
-            <h5 class="card-title">Ime izgubljenog psa: {{ ljubimac.ime }}</h5>
+            <h5 class="card-title">
+              Ime izgubljenog ljubimca: {{ ljubimac.ime }}
+            </h5>
             <p class="card-text">Informacije o izgubljenom ljubimcu</p>
           </div>
           <ul class="list-group list-group-flush">
@@ -25,7 +27,8 @@
               Stanje ljubimca: {{ ljubimac.stanje }}
             </li>
             <li v-if="ljubimac.otherPos" class="list-group-item">
-              Geografska dužina: {{ ljubimac.otherPos.lng }} Geografska širina:
+              Geografska dužina: {{ ljubimac.otherPos.lng }} , Geografska
+              širina:
               {{ ljubimac.otherPos.lat }}
             </li>
             <li class="list-group-item">
