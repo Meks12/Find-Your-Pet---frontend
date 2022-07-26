@@ -1,6 +1,6 @@
 <template>
   <div class="Naslov">
-    <p>Geo Lokacija ljubimca</p>
+    <p>Geo Lokacija Ljubimca</p>
   </div>
   <div class="Mapa">
     <div class="d-flex text-center" style="height: 20vh">
@@ -54,7 +54,7 @@
   </div>
 
   <div class="ButtonPrijava">
-    <Button />
+    <ButtonPodaciKorisnika />
   </div>
 </template>
 
@@ -63,14 +63,14 @@
 import { computed, ref, onMounted, onUnmounted } from "vue";
 import GeoLocation from "../components/GeoLocation.vue";
 import { Loader } from "@googlemaps/js-api-loader";
-import Button from "@/components/Button.vue";
+import ButtonPodaciKorisnika from "@/components/ButtonPodaciKorisnika.vue";
 
 const GOOGLE_MAPS_API_KEY = "AIzaSyCh-kFS3bfWJBkAlSFrcWUoCesLXZaI9_A";
 
 export default {
   name: "GeoLokacija",
   components: {
-    Button,
+    ButtonPodaciKorisnika,
   },
   data() {
     return {

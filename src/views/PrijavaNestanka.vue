@@ -1,9 +1,7 @@
 <template>
-  <h3>
-    <span class="badge bg-secondary">Odaberi lokaciju</span>
-  </h3>
-  <ButtonGeoLokacija />
-
+  <div class="Naslov">
+    <p>Prijavi Nestanak Ljubimca</p>
+  </div>
   <div class="Background">
     <div class="Brtel">
       <span class="input-group-text" id="basic-addon1">Ime ljubimca</span>
@@ -85,6 +83,10 @@
       </button>
     </div>
 
+    <h3>
+      <span class="badge bg-secondary">Odaberi lokaciju</span>
+    </h3>
+    <ButtonGeoLokacija />
     <div>
       <ButtonPodaciKorisnika />
     </div>
@@ -201,6 +203,7 @@ export default {
 
 .Spremi {
   margin-top: 50px;
+  margin-bottom: 50px;
   cursor: pointer;
   text-align: center;
   display: inline-block;

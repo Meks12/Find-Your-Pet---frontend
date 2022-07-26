@@ -62,6 +62,7 @@
                   <div class="accordion-body">
                     <div>
                       <li class="list-group-item">
+                        Ime vlasnika:
                         {{
                           Vlasnici.find(
                             (jedanVlasnik) =>
@@ -70,6 +71,7 @@
                         }}
                       </li>
                       <li class="list-group-item">
+                        Prezime vlasnika:
                         {{
                           Vlasnici.find(
                             (jedanVlasnik) =>
@@ -78,6 +80,7 @@
                         }}
                       </li>
                       <li class="list-group-item">
+                        Broj mobitela vlasnika:
                         {{
                           Vlasnici.find(
                             (jedanVlasnik) =>
@@ -86,12 +89,14 @@
                         }}
                       </li>
                       <li class="list-group-item">
+                        Datum rođenja vlasnika:
                         {{
                           Vlasnici.find(
                             (jedanVlasnik) =>
                               jedanVlasnik.ljubimac === ljubimac.ime
                           ).datum
                         }}
+                        Adresa stanovanja vlasnika:
                       </li>
                       <li class="list-group-item">
                         {{
@@ -102,6 +107,7 @@
                         }}
                       </li>
                       <li class="list-group-item">
+                        Komentar vlasnika:
                         {{
                           Vlasnici.find(
                             (jedanVlasnik) =>
@@ -110,6 +116,7 @@
                         }}
                       </li>
                       <li class="list-group-item">
+                        Nagrada za pronalazak:
                         {{
                           Vlasnici.find(
                             (jedanVlasnik) =>
