@@ -124,8 +124,8 @@ export default {
   },
   data() {
     return {
-      imeKorisnika: "",
-      prezimeKorisnika: "",
+      ime: "",
+      prezime: "",
       broj: "",
       datum: "",
       adresa: "",

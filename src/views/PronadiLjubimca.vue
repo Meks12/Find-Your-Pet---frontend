@@ -14,10 +14,12 @@
               />
               <img class="card-img-top" alt="Card image cap" />
               <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-title text-black">
                   Ime izgubljenog ljubimca: {{ ljubimac.ime }}
                 </h5>
-                <p class="card-text">Informacije o izgubljenom ljubimcu</p>
+                <p class="card-text text-black">
+                  Informacije o izgubljenom ljubimcu
+                </p>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
@@ -62,7 +64,7 @@
                       aria-labelledby="headingOne"
                       data-bs-parent="#accordionExample"
                     >
-                      <div class="accordion-body">
+                      <div v-if="Vlasnici" class="accordion-body">
                         <div>
                           <li class="list-group-item">
                             Ime vlasnika:
@@ -160,6 +162,7 @@
 import Cards from "@/components/Cards.vue";
 import LjubimciCard from "@/components/LjubimciCard.vue";
 import axios from "axios";
+import { computed } from "@vue/runtime-core";
 export default {
   name: "PronadiLjubimca",
   components: {
@@ -204,6 +207,13 @@ export default {
   async mounted() {
     this.Vlasnici = await this.getVlasnici();
     this.Ljubimci = await this.getLjubimci();
+  },
+  computed: {
+    vlasnik() {
+      return Vlasnici.find(
+        (jedanVlasnik) => jedanVlasnik.ljubimac === ljubimac.ime
+      );
+    },
   },
 };
 </script>
