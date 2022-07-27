@@ -282,4 +282,13 @@ export default {
   width: 100;
   height: 100%;
 }
+.Izaberi {
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+}
+
+.Komentar {
+  color: black;
+}
 </style>
