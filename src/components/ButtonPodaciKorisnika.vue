@@ -15,7 +15,14 @@ export default {
 </script>
 
 <style>
-.batun {
+.podacik {
   margin-top: 50px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px 24px;
+  color: #e7e7e7;
 }
 </style>

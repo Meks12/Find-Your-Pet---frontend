@@ -1,110 +1,116 @@
 <template>
-  <div class="ImePrez">
-    <div class="input-group">
-      <span class="input-group-text">Ime i prezime</span>
-      <input
-        type="text"
-        aria-label="Last Name"
-        class="form-control"
-        v-model="ime"
-      />
-      <input
-        type="text"
-        aria-label="First Name"
-        class="form-control"
-        v-model="prezime"
-      />
-    </div>
-  </div>
+  <div class="pozslika">
+    <div class="ok">
+      <div class="ImePrez">
+        <div class="input-group">
+          <span class="input-group-text">Ime i prezime</span>
+          <input
+            type="text"
+            aria-label="Last Name"
+            class="form-control"
+            v-model="ime"
+          />
+          <input
+            type="text"
+            aria-label="First Name"
+            class="form-control"
+            v-model="prezime"
+          />
+        </div>
+      </div>
 
-  <div class="Brtel">
-    <span class="input-group-text" id="basic-addon1">Broj telefona</span>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Upisite broj telefona"
-      aria-label="Upisite broj telefona"
-      aria-describedby="basic-addon1"
-      v-model="broj"
-    />
-  </div>
+      <div class="Brtel">
+        <span class="input-group-text" id="basic-addon1">Broj telefona</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Upisite broj telefona"
+          aria-label="Upisite broj telefona"
+          aria-describedby="basic-addon1"
+          v-model="broj"
+        />
+      </div>
 
-  <div class="Datum">
-    <span class="input-group-text" id="basic-addon1">Datum rođenja</span>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Upisite datum rođenja"
-      aria-label="Upisite datum rođenja"
-      aria-describedby="basic-addon1"
-      v-model="datum"
-    />
-  </div>
+      <div class="Datum">
+        <span class="input-group-text" id="basic-addon1">Datum rođenja</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Upisite datum rođenja"
+          aria-label="Upisite datum rođenja"
+          aria-describedby="basic-addon1"
+          v-model="datum"
+        />
+      </div>
 
-  <div class="Adresa">
-    <span class="input-group-text" id="basic-addon1">Adresa stanovanja</span>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Upisite adresu"
-      aria-label="Upisite adresu"
-      aria-describedby="basic-addon1"
-      v-model="adresa"
-    />
-  </div>
-
-  <div class="Komentar">
-    <div class="Komentarvelicina">
-      <label for="floatingTextarea">Dodajte komentar</label>
-    </div>
-    <textarea
-      class="form-control"
-      placeholder="Dodajte komentar ovdje"
-      id="floatingTextarea"
-      v-model="komentar"
-    ></textarea>
-  </div>
-
-  <h3>
-    <span class="badge bg-secondary">Nudite li nagradu: </span>
-  </h3>
-  <div class="Nagrada">
-    <input type="radio" id="one" value="Da" v-model="nagrada" />
-    <label for="Da">Da</label>
-
-    <input type="radio" id="two" value="Ne" v-model="nagrada" />
-    <label for="Ne">Ne</label>
-  </div>
-  <div class="Izaberi">
-    Izaberite ime vašeg ljubimca:
-    <div class="Odaberi">
-      <select
-        class="form-select"
-        aria-label="Default select example"
-        v-model="odabraniLjubimac"
-      >
-        <option
-          v-for="ljubimac in Ljubimci"
-          :key="ljubimac"
-          :value="ljubimac.ime"
+      <div class="Adresa">
+        <span class="input-group-text" id="basic-addon1"
+          >Adresa stanovanja</span
         >
-          {{ ljubimac.ime }}
-        </option>
-      </select>
-    </div>
-  </div>
-  <div class="ButtonSpremi">
-    <button
-      type="button"
-      v-on:click="posaljiBackendKorisnik"
-      class="btn btn-success"
-    >
-      Spremi podatke
-    </button>
-  </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Upisite adresu"
+          aria-label="Upisite adresu"
+          aria-describedby="basic-addon1"
+          v-model="adresa"
+        />
+      </div>
 
-  <div class="PronadiLjubimcaButton">
-    <ButtonPronadi />
+      <div class="Komentar">
+        <div class="Komentarvelicina">
+          <label for="floatingTextarea">Dodajte komentar</label>
+        </div>
+        <textarea
+          class="form-control"
+          placeholder="Dodajte komentar ovdje"
+          id="floatingTextarea"
+          v-model="komentar"
+        ></textarea>
+      </div>
+
+      <h3>
+        <span class="badge bg-secondary">Nudite li nagradu: </span>
+      </h3>
+      <div class="Nagrada">
+        <input type="radio" id="one" value="Da" v-model="nagrada" />
+        <label for="Da">Da</label>
+
+        <input type="radio" id="two" value="Ne" v-model="nagrada" />
+        <label for="Ne">Ne</label>
+      </div>
+      <div class="Izaberi">
+        Izaberite ime vašeg ljubimca:
+        <div class="Odaberi">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            v-model="odabraniLjubimac"
+          >
+            <option
+              v-for="ljubimac in Ljubimci"
+              :key="ljubimac"
+              :value="ljubimac.ime"
+            >
+              {{ ljubimac.ime }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="ButtonSpremi">
+        <button
+          type="button"
+          v-on:click="posaljiBackendKorisnik"
+          class="btn btn-success"
+        >
+          Spremi podatke
+        </button>
+      </div>
+
+      <div class="PronadiLjubimcaButton">
+        <ButtonPronadi />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -256,5 +262,24 @@ export default {
   font-family: "Times New Roman", Times, serif;
   margin-top: 20px;
   font-size: 20px;
+}
+.pozslika {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", inter;
+  color: whitesmoke;
+  outline-color: rgb(92, 92, 92);
+  height: 0.1px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url("@/assets/pett.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100;
+  height: 100%;
 }
 </style>

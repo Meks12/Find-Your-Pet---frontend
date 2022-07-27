@@ -1,99 +1,110 @@
 <template>
-  <div class="Naslov">
-    <p>Prijavi Nestanak Ljubimca</p>
-  </div>
-  <div class="Background">
-    <div class="Brtel">
-      <span class="input-group-text" id="basic-addon1">Ime ljubimca</span>
-      <input
-        type="text"
-        class="form-control"
-        v-model="ime"
-        placeholder="Upisite ime ljubimca"
-        aria-label="Upisite ime ljubimca"
-        aria-describedby="basic-addon1"
-      />
-    </div>
-    <div class="Brtel">
-      <span class="input-group-text" id="basic-addon1">Stanje ljubimca</span>
-      <input
-        type="text"
-        class="form-control"
-        v-model="stanje"
-        placeholder="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
-        aria-label="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
-        aria-describedby="basic-addon1"
-      />
-    </div>
+  <div class="background">
+    <div class="nebitno">
+      <div class="Naslov">
+        <p>Prijavi Nestanak Ljubimca</p>
+      </div>
+      <div class="Background">
+        <div class="Brtel">
+          <span class="input-group-text" id="basic-addon1">Ime ljubimca</span>
+          <input
+            type="text"
+            class="form-control"
+            v-model="ime"
+            placeholder="Upisite ime ljubimca"
+            aria-label="Upisite ime ljubimca"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="Brtel">
+          <span class="input-group-text" id="basic-addon1"
+            >Stanje ljubimca</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            v-model="stanje"
+            placeholder="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
+            aria-label="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
+            aria-describedby="basic-addon1"
+          />
+        </div>
 
-    <div class="Brtel">
-      <span class="input-group-text" id="basic-addon1">Vrsta ljubimca</span>
-      <input
-        type="text"
-        class="form-control"
-        v-model="vrsta_psa"
-        placeholder="Upisite vrstu vašeg psa"
-        aria-label="Upišite vrstu vašeg psa"
-        aria-describedby="basic-addon1"
-      />
-    </div>
+        <div class="Brtel">
+          <span class="input-group-text" id="basic-addon1">Vrsta ljubimca</span>
+          <input
+            type="text"
+            class="form-control"
+            v-model="vrsta_psa"
+            placeholder="Upisite vrstu vašeg psa"
+            aria-label="Upišite vrstu vašeg psa"
+            aria-describedby="basic-addon1"
+          />
+        </div>
 
-    <div class="SlikaPsa">
-      <h3>
-        <span class="badge bg-secondary">Odaberi sliku psa</span>
-      </h3>
-      <div class="input-group mb-3">
-        <input type="file" class="form-control" id="inputGroupFile02" />
-        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        <div class="SlikaPsa">
+          <h3>
+            <span class="badge bg-secondary">Odaberi sliku psa</span>
+          </h3>
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile02" />
+            <label class="input-group-text" for="inputGroupFile02"
+              >Upload</label
+            >
+          </div>
+        </div>
+
+        <h3>
+          <span class="badge bg-secondary">Je li ljubimac čipiran</span>
+        </h3>
+        <div class="OgrlicaDa">
+          <input type="radio" id="one" value="Da" v-model="cip" />
+          <label for="Da">Da</label>
+
+          <input type="radio" id="two" value="Ne" v-model="cip" />
+          <label for="Ne">Ne</label>
+        </div>
+
+        <h3>
+          <span class="badge bg-secondary">Spol</span>
+        </h3>
+        <div class="Mz">
+          <input type="radio" id="one" value="Muško" v-model="spol" />
+          <label for="Muško">Muško</label>
+
+          <input type="radio" id="two" value="Žensko" v-model="spol" />
+          <label for="Žensko">Žensko</label>
+        </div>
+
+        <div>
+          <h3>
+            <span class="badge bg-secondary">Datum nestanka</span>
+          </h3>
+          <input
+            v-model="datum_nestanka"
+            placeholder="Upišite datum nestanka"
+          />
+        </div>
+
+        <div>
+          <button class="Spremi" v-on:click="posaljiBackend" variant="primary">
+            Spremi
+          </button>
+        </div>
+
+        <h3>
+          <span class="badge bg-secondary">Odaberi lokaciju</span>
+        </h3>
+        <ButtonGeoLokacija class="geolokbutton" />
+        <div>
+          <ButtonPodaciKorisnika class="podacik" />
+        </div>
+      </div>
+      <div class="proba">
+        <input type="file" @change="onFileSelected" />
+        <button @click="onUpload">Upload</button>
       </div>
     </div>
-
-    <h3>
-      <span class="badge bg-secondary">Je li ljubimac čipiran</span>
-    </h3>
-    <div class="OgrlicaDa">
-      <input type="radio" id="one" value="Da" v-model="cip" />
-      <label for="Da">Da</label>
-
-      <input type="radio" id="two" value="Ne" v-model="cip" />
-      <label for="Ne">Ne</label>
-    </div>
-
-    <h3>
-      <span class="badge bg-secondary">Spol</span>
-    </h3>
-    <div class="Mz">
-      <input type="radio" id="one" value="Muško" v-model="spol" />
-      <label for="Muško">Muško</label>
-
-      <input type="radio" id="two" value="Žensko" v-model="spol" />
-      <label for="Žensko">Žensko</label>
-    </div>
-
-    <div>
-      <h3>
-        <span class="badge bg-secondary">Datum nestanka</span>
-      </h3>
-      <input v-model="datum_nestanka" placeholder="Upišite datum nestanka" />
-    </div>
-
-    <div>
-      <button class="Spremi" v-on:click="posaljiBackend" variant="primary">
-        Spremi
-      </button>
-    </div>
-
-    <h3>
-      <span class="badge bg-secondary">Odaberi lokaciju</span>
-    </h3>
-    <ButtonGeoLokacija />
-    <div>
-      <ButtonPodaciKorisnika />
-    </div>
-  </div>
-  <div class="proba">
-    <input type="file" @change="onFileSelected" />
-    <button @click="onUpload">Upload</button>
   </div>
 </template>
 
@@ -207,5 +218,38 @@ export default {
   cursor: pointer;
   text-align: center;
   display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px 24px;
+  background-color: #e7e7e7;
+  color: black;
+}
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", inter;
+  color: whitesmoke;
+  outline-color: rgb(92, 92, 92);
+  height: 0.1px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url("@/assets/slikaljubimca.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.geolokbutton {
+  margin-top: 50px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px 24px;
+  background-color: #e7e7e7;
+  color: black;
 }
 </style>

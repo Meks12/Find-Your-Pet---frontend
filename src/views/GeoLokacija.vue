@@ -1,60 +1,62 @@
 <template>
-  <div class="Naslov">
-    <p>Geo Lokacija Ljubimca</p>
-  </div>
-  <div class="Mapa">
-    <div class="d-flex text-center" style="height: 20vh">
-      <div class="m-auto">
-        <h4>Moja pozicija</h4>
+  <div class="p-3 mb-2 bg-dark text-white">
+    <div class="Naslov">
+      <p>Geo Lokacija Ljubimca</p>
+    </div>
+    <div class="Mapa">
+      <div class="d-flex text-center" style="height: 20vh">
+        <div class="m-auto">
+          <h4>Moja pozicija</h4>
 
-        zemljopisna širina: {{ currPos.lat.toFixed(2) }}, zemljopisna dužina:
-        {{ currPos.lng.toFixed(2) }}
+          zemljopisna širina: {{ currPos.lat.toFixed(2) }}, zemljopisna dužina:
+          {{ currPos.lng.toFixed(2) }}
+        </div>
+        <div class="m-auto">
+          <h4>Označena pozicija</h4>
+          <span v-if="otherPos">
+            zemljopisna širina: {{ otherPos.lat.toFixed(2) }}, zemljopisna
+            dužina:
+            {{ otherPos.lng.toFixed(2) }}
+          </span>
+          <span v-else>Klikom na mapu označavate poziciju</span>
+        </div>
       </div>
-      <div class="m-auto">
-        <h4>Označena pozicija</h4>
-        <span v-if="otherPos">
-          zemljopisna širina: {{ otherPos.lat.toFixed(2) }}, zemljopisna dužina:
-          {{ otherPos.lng.toFixed(2) }}
-        </span>
-        <span v-else>Klikom na mapu označavate poziciju</span>
-      </div>
+
+      <div ref="mapDiv" style="width: 100%; height: 80vh" />
     </div>
 
-    {{ otherPos }}
-    <div ref="mapDiv" style="width: 100%; height: 80vh" />
-  </div>
-
-  <div class="Izaberi">
-    Izaberite ime vašeg ljubimca:
-    <div class="Odaberi">
-      <select
-        class="form-select"
-        aria-label="Default select example"
-        v-model="odabraniLjubimac"
-      >
-        <option
-          v-for="ljubimac in Ljubimci"
-          :key="ljubimac"
-          :value="ljubimac.ime"
+    <div class="Izaberi">
+      Izaberite ime vašeg ljubimca:
+      <div class="Odaberi">
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          v-model="odabraniLjubimac"
         >
-          {{ ljubimac.ime }}
-        </option>
-      </select>
+          <option
+            v-for="ljubimac in Ljubimci"
+            :key="ljubimac"
+            :value="ljubimac.ime"
+          >
+            {{ ljubimac.ime }}
+          </option>
+        </select>
+      </div>
     </div>
-  </div>
 
-  <div class="ButtonSpremi">
-    <button
-      type="button"
-      v-on:click="posaljiBackendLokacija"
-      class="btn btn-success"
-    >
-      Spremi izabranu lokaciju
-    </button>
-  </div>
+    <div class="ButtonSpremi">
+      <button
+        type="button"
+        v-on:click="posaljiBackendLokacija"
+        class="btn btn-success"
+      >
+        Spremi izabranu lokaciju
+      </button>
+    </div>
 
-  <div class="ButtonPrijava">
-    <ButtonPodaciKorisnika />
+    <div class="ButtonPrijava">
+      <ButtonPodaciKorisnika />
+    </div>
   </div>
 </template>
 
