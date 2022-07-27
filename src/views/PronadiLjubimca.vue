@@ -141,7 +141,13 @@
             >
               Izbrisi
             </button>
-            <button type="button" class="btn btn-secondary">Izmjeni</button>
+            <button
+              type="button"
+              @click="goToIzmjena(ljubimac._id)"
+              class="btn btn-secondary"
+            >
+              Izmjeni
+            </button>
           </div>
           <div></div>
         </div>
@@ -189,6 +195,10 @@ export default {
       this.Ljubimci = this.Ljubimci.filter(
         (ljubimac) => ljubimac._id !== ljubimac_id
       );
+    },
+    goToIzmjena(ljubimac_id) {
+      localStorage.setItem("ljubimacID", `${ljubimac_id}`);
+      this.$router.push("/IzmjenaPodataka");
     },
   },
   async mounted() {
