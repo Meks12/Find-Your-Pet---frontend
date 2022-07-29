@@ -12,15 +12,17 @@
                 class="w3-round"
                 alt="zivotinja"
               />
+
               <img class="card-img-top" alt="Card image cap" />
               <div class="card-body">
                 <h5 class="card-title text-black">
                   Ime izgubljenog ljubimca: {{ ljubimac.ime }}
                 </h5>
-                <p class="card-text text-black">
-                  Informacije o izgubljenom ljubimcu
-                </p>
               </div>
+              <p class="card-text text-black">
+                Informacije o izgubljenom ljubimcu
+              </p>
+
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
@@ -44,6 +46,7 @@
                 <li class="list-group-item">
                   Datum nestanka: {{ ljubimac.datum_nestanka }}
                 </li>
+
                 <div class="accordion" id="accordionExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
