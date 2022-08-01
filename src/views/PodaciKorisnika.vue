@@ -276,7 +276,7 @@ export default {
   left: 0;
   right: 0;
   margin: auto;
-  background-image: url("@/assets/pett.jpg");
+  background-image: url("@/assets/ppics.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100;
