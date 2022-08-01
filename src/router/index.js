@@ -5,6 +5,7 @@ import PronadiLjubimca from "../views/PronadiLjubimca.vue";
 import PodaciKorisnika from "../views/PodaciKorisnika.vue";
 import GeoLokacija from "../views/GeoLokacija.vue";
 import IzmjenaPodataka from "../views/IzmjenaPodataka.vue";
+import VlasnikDetalji from "../views/VlasnikDetalji.vue";
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: "/IzmjenaPodataka",
     name: "/IzmjenaPodataka",
     component: IzmjenaPodataka,
+  },
+  {
+    path: "/VlasnikDetalji",
+    name: "/VlasnikDetalji",
+    component: VlasnikDetalji,
   },
 ];
 

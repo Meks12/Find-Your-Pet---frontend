@@ -5,7 +5,8 @@
     <router-link to="/PronadiLjubimca">Pronadi Ljubimca</router-link> |
     <router-link to="/PodaciKorisnika">Podaci Korisnika</router-link> |
     <router-link to="/GeoLokacija">Geo Lokacija</router-link> |
-    <router-link to="/IzmjenaPodataka">Izmjena Podataka</router-link>
+    <router-link to="/IzmjenaPodataka">Izmjena Podataka</router-link> |
+    <router-link to="/VlasnikDetalji">Vlasnik Detalji</router-link> |
   </nav>
   <router-view />
 </template>

@@ -14,16 +14,15 @@
               />
 
               <img class="card-img-top" alt="Card image cap" />
-              <div class="card-body">
-                <h5 class="card-title text-black">
-                  Ime izgubljenog ljubimca: {{ ljubimac.ime }}
-                </h5>
-              </div>
               <p class="card-text text-black">
                 Informacije o izgubljenom ljubimcu
               </p>
 
               <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Ime izgubljenog ljubimca: {{ ljubimac.ime }}
+                </li>
+
                 <li class="list-group-item">
                   Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
                 </li>
@@ -43,11 +42,13 @@
                   Status čipiranja: {{ ljubimac.cip }}
                 </li>
                 <li class="list-group-item">Spol: {{ ljubimac.spol }}</li>
+
                 <li class="list-group-item">
                   Datum nestanka: {{ ljubimac.datum_nestanka }}
                 </li>
-
-                <div class="accordion" id="accordionExample">
+              </ul>
+            </div>
+            <!--  <div class="accordion" id="accordionExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                       <button
@@ -59,86 +60,84 @@
                         aria-controls="collapseOne"
                       >
                         Detalji vlasnika
-                      </button>
-                    </h2>
+                      </button> -->
+            <!--  </h2>
                     <div
                       id="collapseOne"
                       class="accordion-collapse collapse show"
                       aria-labelledby="headingOne"
                       data-bs-parent="#accordionExample"
-                    >
-                      <div v-if="Vlasnici" class="accordion-body">
-                        <div>
-                          <li class="list-group-item">
-                            Ime vlasnika:
-                            {{
-                              Vlasnici.find(
-                                (jedanVlasnik) =>
-                                  jedanVlasnik.ljubimac === ljubimac.ime
-                              ).ime
-                            }}
-                          </li>
-                          <li class="list-group-item">
-                            Prezime vlasnika:
-                            {{
-                              Vlasnici.find(
-                                (jedanVlasnik) =>
-                                  jedanVlasnik.ljubimac === ljubimac.ime
-                              ).prezime
-                            }}
-                          </li>
-                          <li class="list-group-item">
-                            Broj mobitela vlasnika:
-                            {{
-                              Vlasnici.find(
-                                (jedanVlasnik) =>
-                                  jedanVlasnik.ljubimac === ljubimac.ime
-                              ).broj
-                            }}
-                          </li>
-                          <li class="list-group-item">
-                            Datum rođenja vlasnika:
-                            {{
-                              Vlasnici.find(
-                                (jedanVlasnik) =>
-                                  jedanVlasnik.ljubimac === ljubimac.ime
-                              ).datum
-                            }}
-                          </li>
-                          <li class="list-group-item">
-                            Adresa stanovanja vlasnika:
-                            {{
-                              Vlasnici.find(
-                                (jedanVlasnik) =>
-                                  jedanVlasnik.ljubimac === ljubimac.ime
-                              ).adresa
-                            }}
-                          </li>
-                          <li class="list-group-item">
-                            Komentar vlasnika:
-                            {{
-                              Vlasnici.find(
-                                (jedanVlasnik) =>
-                                  jedanVlasnik.ljubimac === ljubimac.ime
-                              ).komentar
-                            }}
-                          </li>
-                          <li class="list-group-item">
-                            Nagrada za pronalazak:
-                            {{
-                              Vlasnici.find(
-                                (jedanVlasnik) =>
-                                  jedanVlasnik.ljubimac === ljubimac.ime
-                              ).nagrada
-                            }}
-                          </li>
-                        </div>
+                    > -->
+            <!--   <div>
+                        <li class="list-group-item">
+                          Ime vlasnika:
+                          {{
+                            Vlasnici.find(
+                              (jedanVlasnik) =>
+                                jedanVlasnik.ljubimac === ljubimac.ime
+                            ).ime
+                          }}
+                        </li>
+                        <li class="list-group-item">
+                          Prezime vlasnika:
+                          {{
+                            Vlasnici.find(
+                              (jedanVlasnik) =>
+                                jedanVlasnik.ljubimac === ljubimac.ime
+                            ).prezime
+                          }}
+                        </li>
+                        <li class="list-group-item">
+                          Broj mobitela vlasnika:
+                          {{
+                            Vlasnici.find(
+                              (jedanVlasnik) =>
+                                jedanVlasnik.ljubimac === ljubimac.ime
+                            ).broj
+                          }}
+                        </li>
+                        <li class="list-group-item">
+                          Datum rođenja vlasnika:
+                          {{
+                            Vlasnici.find(
+                              (jedanVlasnik) =>
+                                jedanVlasnik.ljubimac === ljubimac.ime
+                            ).datum
+                          }}
+                        </li>
+                        <li class="list-group-item">
+                          Adresa stanovanja vlasnika:
+                          {{
+                            Vlasnici.find(
+                              (jedanVlasnik) =>
+                                jedanVlasnik.ljubimac === ljubimac.ime
+                            ).adresa
+                          }}
+                        </li>
+                        <li class="list-group-item">
+                          Komentar vlasnika:
+                          {{
+                            Vlasnici.find(
+                              (jedanVlasnik) =>
+                                jedanVlasnik.ljubimac === ljubimac.ime
+                            ).komentar
+                          }}
+                        </li>
+                        <li class="list-group-item">
+                          Nagrada za pronalazak:
+                          {{
+                            Vlasnici.find(
+                              (jedanVlasnik) =>
+                                jedanVlasnik.ljubimac === ljubimac.ime
+                            ).nagrada
+                          }}
+                        </li>
                       </div>
                     </div>
                   </div>
                 </div>
               </ul>
-            </div>
+            </div> -->
             <button
               type="button"
               @click="izbrisi(ljubimac._id)"
@@ -152,6 +151,13 @@
               class="btn btn-secondary"
             >
               Izmjeni
+            </button>
+            <button
+              type="button"
+              @click="goToDetalji(vlasnik_id)"
+              class="btn btn-warning"
+            >
+              Detalji vlasnika
             </button>
           </div>
           <div></div>
@@ -206,18 +212,22 @@ export default {
       localStorage.setItem("ljubimacID", `${ljubimac_id}`);
       this.$router.push("/IzmjenaPodataka");
     },
+    goToDetalji(vlasnik_id) {
+      localStorage.setItem("vlasnikID", `${vlasnik_id}`);
+      this.$router.push("/VlasnikDetalji");
+    },
   },
   async mounted() {
     this.Vlasnici = await this.getVlasnici();
     this.Ljubimci = await this.getLjubimci();
   },
-  computed: {
-    vlasnik() {
-      return Vlasnici.find(
-        (jedanVlasnik) => jedanVlasnik.ljubimac === ljubimac.ime
-      );
-    },
-  },
+  // computed: {
+  //   vlasnik() {
+  //     return Vlasnici.find(
+  //       (jedanVlasnik) => jedanVlasnik.ljubimac === ljubimac.ime
+  //     );
+  //   },
+  // },
 };
 </script>
 
