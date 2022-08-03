@@ -215,7 +215,12 @@ export default {
     },
     goToDetalji(vlasnik_id) {
       localStorage.setItem("vlasnikID", `${vlasnik_id}`);
-      this.$router.push("/VlasnikDetalji");
+      this.$router.push({
+        name: "VlasnikDetalji",
+        params: { id2: "62e7b73064f90c4406f5fb2a" },
+      });
+
+      // this.$router.push("/VlasnikDetalji");
     },
   },
   async mounted() {

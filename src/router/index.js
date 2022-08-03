@@ -26,23 +26,24 @@ const routes = [
   },
   {
     path: "/PodaciKorisnika",
-    name: "/PodaciKorisnika",
+    name: "PodaciKorisnika",
     component: PodaciKorisnika,
   },
   {
     path: "/GeoLokacija",
-    name: "/GeoLokacija",
+    name: "GeoLokacija",
     component: GeoLokacija,
   },
   {
     path: "/IzmjenaPodataka",
-    name: "/IzmjenaPodataka",
+    name: "IzmjenaPodataka",
     component: IzmjenaPodataka,
   },
   {
-    path: "/VlasnikDetalji",
-    name: "/VlasnikDetalji",
+    path: "/VlasnikDetalji/:id2",
+    name: "VlasnikDetalji",
     component: VlasnikDetalji,
+    props: true,
   },
 ];
 
