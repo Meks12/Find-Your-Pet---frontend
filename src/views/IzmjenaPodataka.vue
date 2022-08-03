@@ -1,81 +1,74 @@
 <template>
-  <div class="Pozslika">
-    <div class="text-bg-primary p-3">
-      <div class="body">
-        <div class="Brtel">
-          <span class="input-group-text" id="basic-addon1">Ime ljubimca</span>
-          <input
-            type="text"
-            class="form-control"
-            v-model="ime"
-            placeholder="Upisite ime ljubimca"
-            aria-label="Upisite ime ljubimca"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-        <div class="Brtel">
-          <span class="input-group-text" id="basic-addon1"
-            >Stanje ljubimca</span
-          >
-          <input
-            type="text"
-            class="form-control"
-            v-model="stanje"
-            placeholder="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
-            aria-label="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-
-        <div class="Brtel">
-          <span class="input-group-text" id="basic-addon1">Vrsta ljubimca</span>
-          <input
-            type="text"
-            class="form-control"
-            v-model="vrsta_psa"
-            placeholder="Upisite vrstu vašeg psa"
-            aria-label="Upišite vrstu vašeg psa"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-
-        <h3>
-          <span class="badge bg-secondary">Je li ljubimac čipiran</span>
-        </h3>
-        <div class="OgrlicaDa">
-          <input type="radio" id="one" value="Da" v-model="cip" />
-          <label for="Da">Da</label>
-
-          <input type="radio" id="two" value="Ne" v-model="cip" />
-          <label for="Ne">Ne</label>
-        </div>
-
-        <h3>
-          <span class="badge bg-secondary">Spol</span>
-        </h3>
-        <div class="Mz">
-          <input type="radio" id="one" value="Muško" v-model="spol" />
-          <label for="Muško">Muško</label>
-
-          <input type="radio" id="two" value="Žensko" v-model="spol" />
-          <label for="Žensko">Žensko</label>
-        </div>
-
-        <div>
-          <h3>
-            <span class="badge bg-secondary">Datum nestanka</span>
-          </h3>
-          <input
-            v-model="datum_nestanka"
-            placeholder="Upišite datum nestanka"
-          />
-        </div>
-        <button class="Spremi" v-on:click="IspisiFrontend()" variant="primary">
-          Spremi
-        </button>
+  <div class="text-bg-primary p-3">
+    <div class="body">
+      <div class="Brtel">
+        <span class="input-group-text" id="basic-addon1">Ime ljubimca</span>
+        <input
+          type="text"
+          class="form-control"
+          v-model="ime"
+          placeholder="Upisite ime ljubimca"
+          aria-label="Upisite ime ljubimca"
+          aria-describedby="basic-addon1"
+        />
       </div>
-      Primary with contrasting color
+      <div class="Brtel">
+        <span class="input-group-text" id="basic-addon1">Stanje ljubimca</span>
+        <input
+          type="text"
+          class="form-control"
+          v-model="stanje"
+          placeholder="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
+          aria-label="Upisite u kakvom stanju je bio vaš ljubimac kada ste ga izgubili"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+
+      <div class="Brtel">
+        <span class="input-group-text" id="basic-addon1">Vrsta ljubimca</span>
+        <input
+          type="text"
+          class="form-control"
+          v-model="vrsta_psa"
+          placeholder="Upisite vrstu vašeg psa"
+          aria-label="Upišite vrstu vašeg psa"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+
+      <h3>
+        <span class="badge bg-secondary">Je li ljubimac čipiran</span>
+      </h3>
+      <div class="OgrlicaDa">
+        <input type="radio" id="one" value="Da" v-model="cip" />
+        <label for="Da">Da</label>
+
+        <input type="radio" id="two" value="Ne" v-model="cip" />
+        <label for="Ne">Ne</label>
+      </div>
+
+      <h3>
+        <span class="badge bg-secondary">Spol</span>
+      </h3>
+      <div class="Mz">
+        <input type="radio" id="one" value="Muško" v-model="spol" />
+        <label for="Muško">Muško</label>
+
+        <input type="radio" id="two" value="Žensko" v-model="spol" />
+        <label for="Žensko">Žensko</label>
+      </div>
+
+      <div>
+        <h3>
+          <span class="badge bg-secondary">Datum nestanka</span>
+        </h3>
+        <input v-model="datum_nestanka" placeholder="Upišite datum nestanka" />
+      </div>
+      <button class="Spremi" v-on:click="IspisiFrontend()" variant="primary">
+        Spremi
+      </button>
     </div>
+    Primary with contrasting color
   </div>
 </template>
 <script>
@@ -138,11 +131,4 @@ export default {
 };
 </script>
 
-<style>
-.Pozslika {
-  background-size: contain, cover;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-</style>
+<style></style>
