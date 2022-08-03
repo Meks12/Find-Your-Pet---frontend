@@ -21,7 +21,7 @@ export default {
     };
   },
   setup() {
-    debugger;
+    // debugger;
     const route = useRoute();
     return route;
   },
@@ -39,7 +39,7 @@ export default {
     },
   },
   async mounted() {
-    debugger;
+    // debugger;
     //treba mi route -> metoda koja postavlja id na this.id
 
     // let vlasnik = this.getVlasnik();
