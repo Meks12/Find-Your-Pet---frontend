@@ -48,7 +48,9 @@
                 </li>
               </ul>
             </div>
-
+            <div v-for="vlasnik in vlasnici" :key="vlasnik">
+              proba di to pise {{ vlasnik.ime }}
+            </div>
             <!--  <div class="accordion" id="accordionExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -155,7 +157,7 @@
             </button>
             <button
               type="button"
-              @click="goToDetalji(vlasnik_id)"
+              @click="goToDetalji(vlasnik._id)"
               class="btn btn-warning"
             >
               Detalji vlasnika
