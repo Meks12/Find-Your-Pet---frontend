@@ -165,11 +165,9 @@
               Detalji vlasnika
             </button>
           </div>
-          <div>
-            <div v-for="vlasnik in Vlasnici" :key="vlasnik.ljubimac">
-              ime vlasnika: {{ vlasnik.ime }} prezime vlasnika:
-              {{ vlasnik.prezime }}
-            </div>
+          <div v-for="vlasnik in Vlasnici" :key="vlasnik.ljubimac">
+            vlasnik ime: {{ vlasnik.ime }} vlasnik prezime:
+            {{ vlasnik.prezime }}
           </div>
         </div>
       </div>
