@@ -47,8 +47,16 @@
             <span class="badge bg-secondary">Odaberi sliku psa</span>
           </h3>
           <div class="input-group mb-3">
-            <input type="file" class="form-control" id="inputGroupFile02" />
-            <label class="input-group-text" for="inputGroupFile02"
+            <input
+              type="file"
+              class="form-control"
+              id="inputGroupFile02"
+              @change="onFileSelected"
+            />
+            <label
+              class="input-group-text"
+              for="inputGroupFile02"
+              @click="onUpload"
               >Upload</label
             >
           </div>
@@ -163,17 +171,19 @@ export default {
       console.log(podaci);
       xhr.send(JSON.stringify(podaci));
     },
-    onFileSelected(event) {
+    async onFileSelected(event) {
       this.selectedFile = event.target.files[0];
       console.log(this.selectedFile);
     },
-    onUpload() {
+    async onUpload() {
       const fd = new FormData();
       fd.append("image", this.selectedFile, this.selectedFile.name);
       console.log(fd);
-      axios.post("http://localhost:3000/prijavanestanka", fd).then((res) => {
-        console.log(res);
-      });
+      await axios
+        .post("http://localhost:3000/prijavanestanka", fd)
+        .then((res) => {
+          console.log(res);
+        });
     },
   },
   async created() {

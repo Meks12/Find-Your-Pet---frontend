@@ -5,7 +5,7 @@
 
       <div class="row row-cols-4 row-cols-md-2 g-4">
         <div class="d-flex justify content-start">
-          <div v-for="ljubimac in Ljubimci" :key="ljubimac">
+          <div v-for="ljubimac in Ljubimci" :key="ljubimac._id">
             <div class="card" style="width: 30rem">
               <img
                 src="@/assets/petpics.jpg"
@@ -48,29 +48,30 @@
                 </li>
               </ul>
             </div>
-            <div v-for="vlasnik in vlasnici" :key="vlasnik">
-              proba di to pise {{ vlasnik.ime }}
+
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Detalji vlasnika
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                ></div>
+              </div>
             </div>
-            <!--  <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button
-                        class="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
-                      >
-                        Detalji vlasnika
-                      </button> -->
-            <!--  </h2>
-                    <div
-                      id="collapseOne"
-                      class="accordion-collapse collapse show"
-                      aria-labelledby="headingOne"
-                      data-bs-parent="#accordionExample"
-                    > -->
+
             <!--   <div>
                         <li class="list-group-item">
                           Ime vlasnika:
@@ -141,6 +142,7 @@
                 </div>
               </ul>
             </div> -->
+
             <button
               type="button"
               @click="izbrisi(ljubimac._id)"
@@ -163,7 +165,12 @@
               Detalji vlasnika
             </button>
           </div>
-          <div></div>
+          <div>
+            <div v-for="vlasnik in Vlasnici" :key="vlasnik.ljubimac">
+              ime vlasnika: {{ vlasnik.ime }} prezime vlasnika:
+              {{ vlasnik.prezime }}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -229,13 +236,13 @@ export default {
     this.Vlasnici = await this.getVlasnici();
     this.Ljubimci = await this.getLjubimci();
   },
-  // computed: {
-  //   vlasnik() {
-  //     return Vlasnici.find(
-  //       (jedanVlasnik) => jedanVlasnik.ljubimac === ljubimac.ime
-  //     );
-  //   },
-  // },
+  computed: {
+    vlasnik() {
+      return Vlasnici.find(
+        (jedanVlasnik) => jedanVlasnik.ljubimac === ljubimac.ime
+      );
+    },
+  },
 };
 </script>
 

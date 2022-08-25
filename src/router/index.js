@@ -40,7 +40,7 @@ const routes = [
     component: IzmjenaPodataka,
   },
   {
-    path: "/VlasnikDetalji/:id2",
+    path: "/VlasnikDetalji/",
     name: "VlasnikDetalji",
     component: VlasnikDetalji,
     props: true,
