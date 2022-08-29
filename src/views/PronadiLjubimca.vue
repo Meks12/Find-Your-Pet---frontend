@@ -241,6 +241,16 @@ export default {
         (jedanVlasnik) => jedanVlasnik.ljubimac === ljubimac.ime
       );
     },
+
+    titles: function () {
+      var titles = [];
+      for (var i = 0; i < this.Ljubimci.length; i++) {
+        for (var k = 0; i < this.Vlasnici.length; i++) {
+          titles.push(this.Ljubimci[i][k].title);
+        }
+      }
+      return titles;
+    },
   },
 };
 </script>
