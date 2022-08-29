@@ -168,6 +168,11 @@
           <div v-for="vlasnik in Vlasnici" :key="vlasnik.ljubimac">
             vlasnik ime: {{ vlasnik.ime }} vlasnik prezime:
             {{ vlasnik.prezime }}
+            {{ vlasnik.broj }}
+            {{ vlasnik.datum }}
+            {{ vlasnik.adresa }}
+            {{ vlasnik.komentar }}
+            {{ vlasnik.nagrada }}
           </div>
         </div>
       </div>

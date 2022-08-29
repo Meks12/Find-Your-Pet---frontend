@@ -108,10 +108,11 @@
           <ButtonPodaciKorisnika class="podacik" />
         </div>
       </div>
-      <div class="proba">
+      <div class="uploadSlike">
         <input type="file" @change="onFileSelected" />
         <button @click="onUpload">Upload</button>
       </div>
+      <ButtonPovratakNaPocetak />
     </div>
   </div>
 </template>
@@ -119,6 +120,7 @@
 <script>
 import ButtonPodaciKorisnika from "../components/ButtonPodaciKorisnika.vue";
 import ButtonGeoLokacija from "../components/ButtonGeoLokacija.vue";
+import ButtonPovratakNaPocetak from "../components/ButtonPovratakNaPocetak.vue";
 import axios from "axios";
 
 export default {
@@ -126,6 +128,7 @@ export default {
   components: {
     ButtonPodaciKorisnika,
     ButtonGeoLokacija,
+    ButtonPovratakNaPocetak,
   },
   data() {
     return {

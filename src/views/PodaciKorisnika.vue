@@ -1,5 +1,5 @@
 <template>
-  <div class="pozslika">
+  <i class="pozslika">
     <div class="ok">
       <div class="ImePrez">
         <div class="input-group">
@@ -109,18 +109,21 @@
 
       <div class="PronadiLjubimcaButton">
         <ButtonPronadi />
+        <ButtonPovratakNaPocetak />
       </div>
     </div>
-  </div>
+  </i>
 </template>
 
 <script>
 import ButtonPronadi from "../components/ButtonPronadi.vue";
+import ButtonPovratakNaPocetak from "../components/ButtonPovratakNaPocetak.vue";
 
 export default {
   name: "PodaciKorisnika",
   components: {
     ButtonPronadi,
+    ButtonPovratakNaPocetak,
   },
   data() {
     return {
@@ -276,9 +279,9 @@ export default {
   left: 0;
   right: 0;
   margin: auto;
-  background-image: url("@/assets/ppics.jpg");
+  background-image: url("@/assets/dog.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain, cover;
   width: 100;
   height: 100%;
 }
