@@ -1,78 +1,73 @@
 <template>
-  <div class="naslov">
-    <div class="text-bg-primary p-3">
-      <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
+  <div>
+    <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
+    <ButtonPovratakNaPocetak />
+    <div class="row row-cols-4 row-cols-md-2 g-4">
+      <div class="d-flex justify content-start">
+        <div v-for="ljubimac in Ljubimci" :key="ljubimac._id">
+          <div class="card" style="width: 30rem">
+            <img src="@/assets/petpics.jpg" class="w3-round" alt="zivotinja" />
 
-      <div class="row row-cols-4 row-cols-md-2 g-4">
-        <div class="d-flex justify content-start">
-          <div v-for="ljubimac in Ljubimci" :key="ljubimac._id">
-            <div class="card" style="width: 30rem">
-              <img
-                src="@/assets/petpics.jpg"
-                class="w3-round"
-                alt="zivotinja"
-              />
+            <img class="card-img-top" alt="Card image cap" />
+            <p class="card-text text-black">
+              Informacije o izgubljenom ljubimcu
+            </p>
 
-              <img class="card-img-top" alt="Card image cap" />
-              <p class="card-text text-black">
-                Informacije o izgubljenom ljubimcu
-              </p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Ime izgubljenog ljubimca: {{ ljubimac.ime }}
+              </li>
 
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Ime izgubljenog ljubimca: {{ ljubimac.ime }}
-                </li>
+              <li class="list-group-item">
+                Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
+              </li>
+              <li class="list-group-item">
+                Stanje ljubimca: {{ ljubimac.stanje }}
+              </li>
+              <li v-if="ljubimac.otherPos" class="list-group-item">
+                Geografska dužina: {{ ljubimac.otherPos.lng }} , Geografska
+                širina:
+                {{ ljubimac.otherPos.lat }}
+              </li>
+              <li class="list-group-item">
+                Detaljan opis mjesta gdje je pas zadnji put viđen:
+                {{ ljubimac.stanje }}
+              </li>
+              <li class="list-group-item">
+                Status čipiranja: {{ ljubimac.cip }}
+              </li>
+              <li class="list-group-item">Spol: {{ ljubimac.spol }}</li>
 
-                <li class="list-group-item">
-                  Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
-                </li>
-                <li class="list-group-item">
-                  Stanje ljubimca: {{ ljubimac.stanje }}
-                </li>
-                <li v-if="ljubimac.otherPos" class="list-group-item">
-                  Geografska dužina: {{ ljubimac.otherPos.lng }} , Geografska
-                  širina:
-                  {{ ljubimac.otherPos.lat }}
-                </li>
-                <li class="list-group-item">
-                  Detaljan opis mjesta gdje je pas zadnji put viđen:
-                  {{ ljubimac.stanje }}
-                </li>
-                <li class="list-group-item">
-                  Status čipiranja: {{ ljubimac.cip }}
-                </li>
-                <li class="list-group-item">Spol: {{ ljubimac.spol }}</li>
+              <li class="list-group-item">
+                Datum nestanka: {{ ljubimac.datum_nestanka }}
+              </li>
+            </ul>
+          </div>
 
-                <li class="list-group-item">
-                  Datum nestanka: {{ ljubimac.datum_nestanka }}
-                </li>
-              </ul>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Detalji vlasnika
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              ></div>
             </div>
+          </div>
 
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button
-                    class="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Detalji vlasnika
-                  </button>
-                </h2>
-                <div
-                  id="collapseOne"
-                  class="accordion-collapse collapse show"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample"
-                ></div>
-              </div>
-            </div>
-
-            <!--   <div>
+          <!--   <div>
                         <li class="list-group-item">
                           Ime vlasnika:
                           {{
@@ -143,37 +138,36 @@
               </ul>
             </div> -->
 
-            <button
-              type="button"
-              @click="izbrisi(ljubimac._id)"
-              class="btn btn-danger"
-            >
-              Izbrisi
-            </button>
-            <button
-              type="button"
-              @click="goToIzmjena(ljubimac._id)"
-              class="btn btn-secondary"
-            >
-              Izmjeni
-            </button>
-            <button
-              type="button"
-              @click="goToDetalji(vlasnik._id)"
-              class="btn btn-warning"
-            >
-              Detalji vlasnika
-            </button>
-          </div>
-          <div v-for="vlasnik in Vlasnici" :key="vlasnik.ljubimac">
-            vlasnik ime: {{ vlasnik.ime }} vlasnik prezime:
-            {{ vlasnik.prezime }}
-            {{ vlasnik.broj }}
-            {{ vlasnik.datum }}
-            {{ vlasnik.adresa }}
-            {{ vlasnik.komentar }}
-            {{ vlasnik.nagrada }}
-          </div>
+          <button
+            type="button"
+            @click="izbrisi(ljubimac._id)"
+            class="btn btn-danger"
+          >
+            Izbrisi
+          </button>
+          <button
+            type="button"
+            @click="goToIzmjena(ljubimac._id)"
+            class="btn btn-secondary"
+          >
+            Izmjeni
+          </button>
+          <button
+            type="button"
+            @click="goToDetalji(vlasnik._id)"
+            class="btn btn-warning"
+          >
+            Detalji vlasnika
+          </button>
+        </div>
+        <div v-for="vlasnik in Vlasnici" :key="vlasnik.ljubimac">
+          vlasnik ime: {{ vlasnik.ime }} vlasnik prezime:
+          {{ vlasnik.prezime }}
+          {{ vlasnik.broj }}
+          {{ vlasnik.datum }}
+          {{ vlasnik.adresa }}
+          {{ vlasnik.komentar }}
+          {{ vlasnik.nagrada }}
         </div>
       </div>
     </div>
@@ -185,11 +179,13 @@ import Cards from "@/components/Cards.vue";
 import LjubimciCard from "@/components/LjubimciCard.vue";
 import axios from "axios";
 import { computed } from "@vue/runtime-core";
+import ButtonPovratakNaPocetak from "../components/ButtonPovratakNaPocetak.vue";
 export default {
   name: "PronadiLjubimca",
   components: {
     Cards,
     LjubimciCard,
+    ButtonPovratakNaPocetak,
   },
 
   data() {
@@ -287,4 +283,26 @@ export default {
   width: 100%;
   height: 100%;
 }
+
+/*.pozadinskaSlika {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", inter;
+  color: whitesmoke;
+  outline-color: rgb(92, 92, 92);
+  height: 0.1px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url("@/assets/sslika.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+*/
 </style>
