@@ -151,13 +151,6 @@
               >
                 Izmjeni podatke ljubimca
               </button>
-              <button
-                type="button"
-                @click="goToIzmjenaVlasnik(vlasnik._id)"
-                class="btn btn-dark"
-              >
-                Izmjeni podatke vlasnika
-              </button>
             </div>
           </div>
         </div>
@@ -223,10 +216,6 @@ export default {
     goToIzmjena(ljubimac_id) {
       localStorage.setItem("ljubimacID", `${ljubimac_id}`);
       this.$router.push("/IzmjenaPodataka");
-    },
-    goToIzmjenaVlasnik(vlasnik_id) {
-      localStorage.setItem("vlasnikID", `${vlasnik_id}`);
-      this.$router.push("/IzmjenaPodatakaVlasnik");
     },
   },
   async mounted() {
