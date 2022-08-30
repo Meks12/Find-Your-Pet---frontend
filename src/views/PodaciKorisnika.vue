@@ -90,7 +90,7 @@
             <option
               v-for="ljubimac in Ljubimci"
               :key="ljubimac"
-              :value="ljubimac.ime"
+              :value="ljubimac._id"
             >
               {{ ljubimac.ime }}
             </option>
