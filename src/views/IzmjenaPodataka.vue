@@ -1,5 +1,5 @@
 <template>
-  <div class="text-bg-primary p-3">
+  <i>
     <div class="body">
       <div class="Brtel">
         <span class="input-group-text" id="basic-addon1">Ime ljubimca</span>
@@ -68,8 +68,7 @@
         Spremi
       </button>
     </div>
-    Primary with contrasting color
-  </div>
+  </i>
 </template>
 <script>
 export default {
@@ -131,4 +130,25 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", inter;
+  color: whitesmoke;
+  outline-color: rgb(92, 92, 92);
+  height: 0.1px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url("@/assets/petpic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+</style>
