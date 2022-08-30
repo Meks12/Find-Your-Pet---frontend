@@ -56,13 +56,6 @@
             >
               Izmjeni
             </button>
-            <button
-              type="button"
-              @click="goToDetalji(vlasnik._id)"
-              class="btn btn-warning"
-            >
-              Detalji vlasnika
-            </button>
           </div>
 
           <div class="accordion" id="accordionExample">
@@ -209,15 +202,6 @@ export default {
     goToIzmjena(ljubimac_id) {
       localStorage.setItem("ljubimacID", `${ljubimac_id}`);
       this.$router.push("/IzmjenaPodataka");
-    },
-    goToDetalji(vlasnik_id) {
-      localStorage.setItem("vlasnikID", `${vlasnik_id}`);
-      this.$router.push({
-        name: "VlasnikDetalji",
-        params: { id2: "62e7b73064f90c4406f5fb2a" },
-      });
-
-      // this.$router.push("/VlasnikDetalji");
     },
   },
   async mounted() {
