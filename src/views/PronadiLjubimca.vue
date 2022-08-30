@@ -20,23 +20,19 @@
               </p>
 
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Ime izgubljenog ljubimca: {{ ljubimac.ime }}
-                </li>
+                <li class="list-group-item">Ime : {{ ljubimac.ime }}</li>
 
                 <li class="list-group-item">
-                  Vrsta ljubimca: {{ ljubimac.vrsta_psa }}
+                  Vrsta : {{ ljubimac.vrsta_psa }}
                 </li>
-                <li class="list-group-item">
-                  Stanje ljubimca: {{ ljubimac.stanje }}
-                </li>
+                <li class="list-group-item">Stanje : {{ ljubimac.stanje }}</li>
                 <li v-if="ljubimac.otherPos" class="list-group-item">
                   Geografska dužina: {{ ljubimac.otherPos.lng }} , Geografska
                   širina:
                   {{ ljubimac.otherPos.lat }}
                 </li>
                 <li class="list-group-item">
-                  Detaljan opis mjesta gdje je pas zadnji put viđen:
+                  Detaljan opis mjesta gdje je ljubimac zadnji put viđen:
                   {{ ljubimac.stanje }}
                 </li>
                 <li class="list-group-item">
@@ -70,7 +66,7 @@
                     >
                       <div>
                         <li class="list-group-item">
-                          Ime vlasnika:
+                          Ime:
                           {{
                             Vlasnici.find(
                               (jedanVlasnik) =>
@@ -79,7 +75,7 @@
                           }}
                         </li>
                         <li class="list-group-item">
-                          Prezime vlasnika:
+                          Prezime:
                           {{
                             Vlasnici.find(
                               (jedanVlasnik) =>
@@ -88,7 +84,7 @@
                           }}
                         </li>
                         <li class="list-group-item">
-                          Broj mobitela vlasnika:
+                          Broj mobitela:
                           {{
                             Vlasnici.find(
                               (jedanVlasnik) =>
@@ -97,7 +93,7 @@
                           }}
                         </li>
                         <li class="list-group-item">
-                          Datum rođenja vlasnika:
+                          Datum rođenja:
                           {{
                             Vlasnici.find(
                               (jedanVlasnik) =>
@@ -106,7 +102,7 @@
                           }}
                         </li>
                         <li class="list-group-item">
-                          Adresa stanovanja vlasnika:
+                          Adresa stanovanja:
                           {{
                             Vlasnici.find(
                               (jedanVlasnik) =>
@@ -115,7 +111,7 @@
                           }}
                         </li>
                         <li class="list-group-item">
-                          Komentar vlasnika:
+                          Komentar:
                           {{
                             Vlasnici.find(
                               (jedanVlasnik) =>

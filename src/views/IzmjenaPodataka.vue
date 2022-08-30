@@ -2,7 +2,7 @@
   <i>
     <div class="body">
       <div class="Brtel">
-        <span class="input-group-text" id="basic-addon1">Ime ljubimca</span>
+        <span class="input-group-text" id="basic-addon1">Ime </span>
         <input
           type="text"
           class="form-control"
@@ -13,7 +13,7 @@
         />
       </div>
       <div class="Brtel">
-        <span class="input-group-text" id="basic-addon1">Stanje ljubimca</span>
+        <span class="input-group-text" id="basic-addon1">Stanje </span>
         <input
           type="text"
           class="form-control"
@@ -25,7 +25,7 @@
       </div>
 
       <div class="Brtel">
-        <span class="input-group-text" id="basic-addon1">Vrsta ljubimca</span>
+        <span class="input-group-text" id="basic-addon1">Vrsta </span>
         <input
           type="text"
           class="form-control"
