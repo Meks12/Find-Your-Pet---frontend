@@ -6,6 +6,10 @@
     <router-link to="/PodaciKorisnika">Podaci Korisnika</router-link> |
     <router-link to="/GeoLokacija">Geo Lokacija</router-link> |
     <router-link to="/IzmjenaPodataka">Izmjena Podataka</router-link> |
+    <router-link to="/IzmjenaPodatakaVlasnik"
+      >Izmjena Podataka Vlasnika</router-link
+    >
+    |
   </nav>
   <router-view />
 </template>
