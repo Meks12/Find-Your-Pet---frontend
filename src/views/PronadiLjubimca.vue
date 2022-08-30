@@ -4,7 +4,7 @@
       <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
       <ButtonPovratakNaPocetak />
 
-      <div class="row row-cols-4 row-cols-md-2 g-4">
+      <div class="col-12 col-md-6 col-lg-4">
         <div class="d-flex justify content-start">
           <div v-for="ljubimac in Ljubimci" :key="ljubimac._id">
             <div class="card" style="width: 30rem">
