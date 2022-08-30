@@ -3,6 +3,7 @@
     <div>
       <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
       <ButtonPovratakNaPocetak />
+
       <div class="row row-cols-4 row-cols-md-2 g-4">
         <div class="d-flex justify content-start">
           <div v-for="ljubimac in Ljubimci" :key="ljubimac._id">
@@ -148,7 +149,14 @@
                 @click="goToIzmjena(ljubimac._id)"
                 class="btn btn-secondary"
               >
-                Izmjeni
+                Izmjeni podatke ljubimca
+              </button>
+              <button
+                type="button"
+                @click="goToIzmjenaVlasnik(vlasnik._id)"
+                class="btn btn-dark"
+              >
+                Izmjeni podatke vlasnika
               </button>
             </div>
           </div>
@@ -215,6 +223,10 @@ export default {
     goToIzmjena(ljubimac_id) {
       localStorage.setItem("ljubimacID", `${ljubimac_id}`);
       this.$router.push("/IzmjenaPodataka");
+    },
+    goToIzmjenaVlasnik(vlasnik_id) {
+      localStorage.setItem("vlasnikID", `${vlasnik_id}`);
+      this.$router.push("/IzmjenaPodatakaVlasnik");
     },
   },
   async mounted() {
