@@ -249,7 +249,7 @@ export default {
   left: 0;
   right: 0;
   margin: auto;
-  background-image: url("@/assets/slikaljubimca.jpg");
+  background-image: url("@/assets/1357521.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;

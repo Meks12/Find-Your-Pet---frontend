@@ -286,7 +286,7 @@ export default {
   height: 100%;
 }
 .Izaberi {
-  color: black;
+  color: rgb(225, 198, 21);
   font-family: "Times New Roman", Times, serif;
   font-size: 30px;
 }
