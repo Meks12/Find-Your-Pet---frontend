@@ -1,9 +1,9 @@
 <template>
-  <div class="ko">
-    <ButtonPovratakNaPocetak />
-
-    <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
+  <div class="pozadina">
     <perfect-scrollbar>
+      <ButtonPovratakNaPocetak />
+
+      <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
       <div class="col-3 col-md-3 col-sm-3">
         <div class="d-flex justify content-start">
           <div v-for="ljubimac in Ljubimci" :key="ljubimac._id">
@@ -284,10 +284,16 @@ export default {
   left: 0;
   right: 0;
   margin: auto;
-  background-image: url("@/assets/1357521.jpg");
+  background-image: url("@/assets/zadnjaslika.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
+}
+
+.pozadina {
+  background-image: url("@/assets/responsible.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>
