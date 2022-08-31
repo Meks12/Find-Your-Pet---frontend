@@ -83,7 +83,7 @@
         Izaberite ime vašeg ljubimca:
         <div id="liveAlertPlaceholder"></div>
         <button type="button" class="btn btn-danger" id="liveAlertBtn">
-          Pozor! obavezno odaberite ime ljubimca
+          Obavezno polje!
         </button>
         <div class="Odaberi">
           <select
