@@ -179,7 +179,7 @@ export default {
       this.selectedFile = event.target.files[0];
       console.log(this.selectedFile);
     },
-    async onUpload() {
+    /*   async onUpload() {
       const fd = new FormData();
       fd.append("image", this.selectedFile, this.selectedFile.name);
       console.log(fd);
@@ -189,6 +189,7 @@ export default {
           console.log(res);
         });
     },
+    */
   },
   async created() {
     const response = await fetch("http://localhost:3000/prijavanestanka");
