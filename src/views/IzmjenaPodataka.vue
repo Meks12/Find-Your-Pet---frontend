@@ -89,7 +89,7 @@ export default {
   methods: {
     async getLjubimac() {
       const response = await fetch(
-        `http://localhost:3000/prijavanestanka/${ljubimac_id}`
+        `https://potragazaljubimcom.herokuapp.com/prijavanestanka/${ljubimac_id}`
       );
       const ljubimci = await response.json();
       return ljubimci;
@@ -115,7 +115,10 @@ export default {
         promjene.datum_nestanka = this.datum_nestanka;
       }
       let xhr = new XMLHttpRequest();
-      xhr.open("PATCH", `http://localhost:3000/prijavanestanka/${this.id}`);
+      xhr.open(
+        "PATCH",
+        `https://potragazaljubimcom.herokuapp.com/prijavanestanka/${this.id}`
+      );
       xhr.setRequestHeader("Accept", "application/json");
       xhr.setRequestHeader("Content-Type", "application/json");
       let podaci = promjene;

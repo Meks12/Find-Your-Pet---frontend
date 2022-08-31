@@ -95,7 +95,10 @@ export default {
   methods: {
     posaljiBackendLokacija() {
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://localhost:3000/prijavanestanka");
+      xhr.open(
+        "POST",
+        "https://potragazaljubimcom.herokuapp.com/prijavanestanka"
+      );
       xhr.setRequestHeader("Accept", "application/json");
       xhr.setRequestHeader("Content-Type", "application/json");
       let podaci = {
@@ -106,7 +109,9 @@ export default {
       xhr.send(JSON.stringify(podaci));
     },
     async getLjubimci() {
-      const response = await fetch("http://localhost:3000/prijavanestanka");
+      const response = await fetch(
+        "https://potragazaljubimcom.herokuapp.com/prijavanestanka"
+      );
       const ljubimci = await response.json();
       console.log(ljubimci);
       return ljubimci;

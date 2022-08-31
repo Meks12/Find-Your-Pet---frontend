@@ -86,7 +86,7 @@ export default {
   methods: {
     async getVlasnik() {
       const response = await fetch(
-        `http://localhost:3000/podacivlasnika/${vlasnik_id}`
+        `https://potragazaljubimcom.herokuapp.com/podacivlasnika/${vlasnik_id}`
       );
       const vlasnici = await response.json();
       return vlasnici;
@@ -112,7 +112,10 @@ export default {
         promjene.nagrada = this.nagrada;
       }
       let xhr = new XMLHttpRequest();
-      xhr.open("PATCH", `http://localhost:3000/podacivlasnika/${this.id}`);
+      xhr.open(
+        "PATCH",
+        `https://potragazaljubimcom.herokuapp.com/podacivlasnika/${this.id}`
+      );
       xhr.setRequestHeader("Accept", "application/json");
       xhr.setRequestHeader("Content-Type", "application/json");
       let podaci = promjene;

@@ -157,7 +157,10 @@ export default {
   methods: {
     posaljiBackendKorisnik() {
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://localhost:3000/podacivlasnika");
+      xhr.open(
+        "POST",
+        "https://potragazaljubimcom.herokuapp.com/podacivlasnika"
+      );
       xhr.setRequestHeader("Accept", "application/json");
       xhr.setRequestHeader("Content-Type", "application/json");
       let podaci = {
@@ -174,13 +177,17 @@ export default {
       xhr.send(JSON.stringify(podaci));
     },
     async getLjubimci() {
-      const response = await fetch("http://localhost:3000/prijavanestanka");
+      const response = await fetch(
+        "https://potragazaljubimcom.herokuapp.com/prijavanestanka"
+      );
       const ljubimci = await response.json();
       return ljubimci;
     },
   },
   async created() {
-    const response = await fetch("http://localhost:3000/podacivlasnika");
+    const response = await fetch(
+      "https://potragazaljubimcom.herokuapp.com/podacivlasnika"
+    );
     const data = await response.json();
     this.totalVuePackages = data.total;
     console.log(data);

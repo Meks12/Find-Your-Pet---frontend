@@ -159,7 +159,10 @@ export default {
   methods: {
     posaljiBackend() {
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://localhost:3000/prijavanestanka");
+      xhr.open(
+        "POST",
+        "https://potragazaljubimcom.herokuapp.com/prijavanestanka"
+      );
       xhr.setRequestHeader("Accept", "application/json");
       xhr.setRequestHeader("Content-Type", "application/json");
       let podaci = {
@@ -192,7 +195,9 @@ export default {
     */
   },
   async created() {
-    const response = await fetch("http://localhost:3000/prijavanestanka");
+    const response = await fetch(
+      "https://potragazaljubimcom.herokuapp.com/prijavanestanka"
+    );
     const data = await response.json();
     this.totalVuePackages = data.total;
     console.log(data);

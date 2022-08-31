@@ -187,19 +187,23 @@ export default {
 
   methods: {
     async getVlasnici() {
-      const response = await fetch("http://localhost:3000/podacivlasnika");
+      const response = await fetch(
+        "https://potragazaljubimcom.herokuapp.com/podacivlasnika"
+      );
       const vlasnici = await response.json();
       return vlasnici;
     },
 
     async getLjubimci() {
-      const response = await fetch("http://localhost:3000/prijavanestanka");
+      const response = await fetch(
+        "https://potragazaljubimcom.herokuapp.com/prijavanestanka"
+      );
       const ljubimci = await response.json();
       return ljubimci;
     },
     async izbrisi(ljubimac_id) {
       const response = await fetch(
-        `http://localhost:3000/prijavanestanka/${ljubimac_id}`,
+        `https://potragazaljubimcom.herokuapp.com/prijavanestanka/${ljubimac_id}`,
         { method: "DELETE" }
       );
       const status = await response.json();
