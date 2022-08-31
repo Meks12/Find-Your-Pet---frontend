@@ -3,7 +3,6 @@
     <div>
       <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
       <ButtonPovratakNaPocetak />
-
       <div class="col-12 col-md-6 col-lg-4">
         <div class="d-flex justify content-start">
           <div v-for="ljubimac in Ljubimci" :key="ljubimac._id">

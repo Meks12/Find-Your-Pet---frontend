@@ -108,10 +108,11 @@
           <ButtonPodaciKorisnika class="podacik" />
         </div>
       </div>
-      <div class="uploadSlike">
+      <!--   <div class="uploadSlike">
         <input type="file" @change="onFileSelected" />
         <button @click="onUpload">Upload</button>
       </div>
+      !-->
       <ButtonPovratakNaPocetak />
     </div>
   </div>
