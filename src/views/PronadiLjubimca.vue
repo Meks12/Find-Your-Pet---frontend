@@ -8,11 +8,7 @@
         <div class="d-flex justify content-start">
           <div v-for="ljubimac in Ljubimci" :key="ljubimac._id">
             <div class="card" style="width: 14rem">
-              <img
-                src="@/assets/petpics.jpg"
-                class="w3-round"
-                alt="zivotinja"
-              />
+              <img src="@/assets/zlatni.jpg" class="w3-round" alt="zivotinja" />
 
               <!--    <img class="card-img-top" alt="Card image cap" /> !-->
               <p class="card-text text-black">
