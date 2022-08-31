@@ -14,7 +14,7 @@
                 alt="zivotinja"
               />
 
-              <img class="card-img-top" alt="Card image cap" />
+              <!--    <img class="card-img-top" alt="Card image cap" /> !-->
               <p class="card-text text-black">
                 Informacije o izgubljenom ljubimcu
               </p>
