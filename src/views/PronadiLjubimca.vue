@@ -1,12 +1,13 @@
 <template>
-  <div class="pozadinskaSlika">
-    <div>
-      <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
-      <ButtonPovratakNaPocetak />
-      <div class="col-12 col-md-6 col-lg-4">
+  <div class="ko">
+    <ButtonPovratakNaPocetak />
+
+    <p class="PronadiLjuNaslov">Pronadi Ljubimca</p>
+    <perfect-scrollbar>
+      <div class="col-3 col-md-3 col-sm-3">
         <div class="d-flex justify content-start">
           <div v-for="ljubimac in Ljubimci" :key="ljubimac._id">
-            <div class="card" style="width: 30rem">
+            <div class="card" style="width: 14rem">
               <img
                 src="@/assets/petpics.jpg"
                 class="w3-round"
@@ -150,9 +151,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!--  <div v-for="vlasnik in Vlasnici" :key="vlasnik.ljubimac">
+      <!--  <div v-for="vlasnik in Vlasnici" :key="vlasnik.ljubimac">
     vlasnik ime: {{ vlasnik.ime }} vlasnik prezime:
     {{ vlasnik.prezime }}
     {{ vlasnik.broj }}
@@ -162,6 +162,7 @@
     {{ vlasnik.nagrada }}
   </div>
     -->
+    </perfect-scrollbar>
   </div>
 </template>
 
@@ -171,12 +172,14 @@ import LjubimciCard from "@/components/LjubimciCard.vue";
 import axios from "axios";
 import { computed } from "@vue/runtime-core";
 import ButtonPovratakNaPocetak from "../components/ButtonPovratakNaPocetak.vue";
+import { PerfectScrollbar } from "vue3-perfect-scrollbar";
 export default {
   name: "PronadiLjubimca",
   components: {
     Cards,
     LjubimciCard,
     ButtonPovratakNaPocetak,
+    PerfectScrollbar,
   },
 
   data() {
@@ -230,6 +233,7 @@ export default {
 <style>
 .PronadiLjuNaslov {
   font-size: xx-large;
+  color: brown;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 20px;
   margin-bottom: 50px;
@@ -274,7 +278,7 @@ export default {
   color: whitesmoke;
   outline-color: rgb(92, 92, 92);
   height: 0.1px;
-
+  overflow: hidden;
   top: 0;
   bottom: 0;
   left: 0;

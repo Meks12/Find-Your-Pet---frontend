@@ -1,15 +1,12 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/PrijavaNestanka">Prijava Nestanka</router-link> |
-    <router-link to="/PronadiLjubimca">Pronadi Ljubimca</router-link> |
-    <router-link to="/PodaciKorisnika">Podaci Korisnika</router-link> |
-    <router-link to="/GeoLokacija">Geo Lokacija</router-link> |
-    <router-link to="/IzmjenaPodataka">Izmjena Podataka</router-link> |
-    <router-link to="/IzmjenaPodatakaVlasnik"
-      >Izmjena Podataka Vlasnika</router-link
-    >
-    |
+    <router-link to="/"></router-link>
+    <router-link to="/PrijavaNestanka"></router-link>
+    <router-link to="/PronadiLjubimca"></router-link>
+    <router-link to="/PodaciKorisnika"></router-link>
+    <router-link to="/GeoLokacija"></router-link>
+    <router-link to="/IzmjenaPodataka"></router-link>
+    <router-link to="/IzmjenaPodatakaVlasnik"></router-link>
   </nav>
   <router-view />
 </template>
