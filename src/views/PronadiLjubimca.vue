@@ -27,10 +27,7 @@
                   širina:
                   {{ ljubimac.otherPos.lat }}
                 </li>
-                <li class="list-group-item">
-                  Detaljan opis mjesta gdje je vaš ljubimac zadnji put viđen:
-                  {{ ljubimac.stanje }}
-                </li>
+
                 <li class="list-group-item">
                   Status čipiranja: {{ ljubimac.cip }}
                 </li>
